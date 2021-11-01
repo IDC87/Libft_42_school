@@ -48,7 +48,22 @@ GitPush = git push -u origin main
 SetStream = git push --set-upstream origin master
 CleanUrl = git remote rm origin
 
+#GIT BLOCK COMMANDS:
+GitCommit:
+	@git add .
+	@git commit -m "$m"
+REPOLibft:
+	$(LibftREPO)
+UploadGit:
+	@$(SetStream)
+CleanUrl: 
+	@$(CleanUrl)
+GitLibft: GitCommit REPOLibft UploadGit CleanUrl
+	@echo "All Systems OK!"
+#FINAL COMMAND should be: make GitLibft m="message" 
 
+SRCS =		./ft_bzero.c \	
+			
 
 
 #target: dependencies
@@ -68,19 +83,7 @@ loading:
 clean:
 
 
-#GIT BLOCK COMMANDS:
-GitCommit:
-	@git add .
-	@git commit -m "$m"
-REPOLibft:
-	$(LibftREPO)
-UploadGit:
-	@$(SetStream)
-CleanUrl: 
-	@$(CleanUrl)
-GitLibft: GitCommit REPOLibft UploadGit CleanUrl
-	@echo "All Systems OK!"
-#FINAL COMMAND should be: make GitLibft m="message" 
+
 
 dir:	
 	current_dir = $(shell pwd)
