@@ -3,6 +3,7 @@
 
 #  ---- NOTES ----
 
+#OPTIONS
  #@ - to not display in console the command forwarded by this char
  #$ - like a variable declaration
  #$@ is the name of the target being generated
@@ -11,6 +12,10 @@
  #gcc -c - compiles to the .o files
  #:= variable evaluated once at assignment time 
  #= evaluated each time it's used (for reference)
+
+#FUNCTIONS
+ #$(shell date) - show the current time and date
+ #$(shell sleep 'time)
 
 #GIT UPLOAD COMMANDS (as they appear in the beginning of a new repo):
  #echo "# Repo_test" >> README.md
@@ -64,7 +69,8 @@ SRCS = ft_bzero.c\
 #GIT BLOCK COMMANDS:
 GitCommit:
 	@git add .
-	@git commit -m "$m"
+	@git commit -m "$(shell date)"
+#	@git commit -m "$m"
 REPOLibft:
 	$(LibftREPO)
 UploadGit:
