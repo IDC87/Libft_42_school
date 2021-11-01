@@ -1,0 +1,102 @@
+# -*- Makefile -*-
+
+
+
+
+
+#  ---- NOTES ----
+
+ #@ - to not display in console the command forwarded by this char
+ #$ - like a variable declaration
+
+
+#GIT UPLOAD COMMANDS (as they appear in the beginning of a new repo):
+ #echo "# Repo_test" >> README.md
+ #git init
+ #git add README.md
+ #git commit -m "first commit"
+ #git branch -M main
+ #git remote add origin https://github.com/IDC87/Repo_test.git
+ #git push -u origin main
+
+ #…or push an existing repository from the command line
+ #git remote add origin https://github.com/IDC87/Repo_test.git
+ #git branch -M main
+ #git push -u origin main
+
+#GIT GENERAL COMMANDS:
+ #git rev-parse HEAD - shows the last sha key 
+ # git remote get-url origin - shows my current url origin
+ # git remote show origin - almost the same, with more details
+ # git remote -v - view all the remotes of current repository
+ # git remote rm origin - remove current git url in origin
+ # git push --set-upstream origin master - set the current url as upstream
+
+
+#  ---- END OF NOTES ----
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+SHOUT = say
+SHELL = /bin/sh
+
+
+SetGitUrl = git remote --set-url  origin https://github.com/IDC87/Repo_test.git
+
+
+MakefileREPO = git remote add origin https://github.com/IDC87/Makefile-WIP-.git
+LibftREPO = git remote add origin https://github.com/IDC87/Libft_42_school.git
+TestREPO = git remote add origin https://github.com/IDC87/Repo_test.git
+DummyREPO = git remote add origin https://github.com/IDC87/Repo_test.git
+GitPush = git push -u origin main
+SetStream = git push --set-upstream origin master
+CleanUrl = git remote rm origin
+
+
+#target: dependencies
+#	action
+
+#BLABALALALALALALAAL
+
+all: Dictate loading exec
+
+#Dictate: 
+#	$(SHOUT) executing makefile
+loading:
+	$(CC) $(CFLAGS) loading_bar.c -o loading && ./loading
+#exec:
+#	./loading
+clean:
+
+
+#GIT BLOCK COMMANDS:
+# for message in terminal use like this: make GitCommit m="your message"	
+GitCommit:
+	@git add .
+	@git commit -m "$m"
+REPOLibft:
+	$(LibftREPO)
+UploadGit:
+	@$(SetStream)
+CleanUrl: 
+	@$(CleanUrl)
+GitLibft: GitCommit REPOLibft UploadGit CleanUrl
+	@echo "All Systems OK!"
+
+#FINAL COMMAND should be: GitLibft m="message" 
+
+dir:	
+	current_dir = $(shell pwd)
+
+dir2:
+	current_dir = $(notdir $(shell pwd))
+
+
+
+
+
+
+
+
+
+
+
