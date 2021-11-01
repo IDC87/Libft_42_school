@@ -32,11 +32,11 @@
  #git push -u origin main
 
 #GIT GENERAL COMMANDS:
- #git rev-parse HEAD - shows the last sha key 
+ # git rev-parse HEAD - shows the last sha key 
  # git remote get-url origin - shows my current url origin
  # git remote show origin - almost the same, with more details
  # git remote -v - view all the remotes of current repository
- # git remote rm origin - remove current git url in origin
+ # git remote rm origin/upstream - remove current git url in origin/upstream
  # git push --set-upstream origin master - set the current url as upstream
 
 
@@ -53,7 +53,7 @@ TestREPO = git remote add origin https://github.com/IDC87/Repo_test.git
 DummyREPO = git remote add origin https://github.com/IDC87/Repo_test.git
 GitPush = git push -u origin main
 SetStream = git push --set-upstream origin master
-CleanUrl = git remote rm origin             
+CleanUrl = git remote rm origin          
 
 SRCS = ft_bzero.c\
 	ft_isalnum\
