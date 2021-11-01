@@ -8,7 +8,9 @@
  #$@ is the name of the target being generated
  #$< the first prerequisite (usually a source file)
  #.PHONY: - one that is not really the name of a file; rather it is just a name for a recipe to be executed
-
+ #gcc -c - compiles to the .o files
+ #:= variable evaluated once at assignment time 
+ #= evaluated each time it's used (for reference)
 
 #GIT UPLOAD COMMANDS (as they appear in the beginning of a new repo):
  #echo "# Repo_test" >> README.md
@@ -46,7 +48,7 @@ TestREPO = git remote add origin https://github.com/IDC87/Repo_test.git
 DummyREPO = git remote add origin https://github.com/IDC87/Repo_test.git
 GitPush = git push -u origin main
 SetStream = git push --set-upstream origin master
-CleanUrl = git remote rm origin
+CleanUrl = git remote rm origin             
 
 SRCS = ft_bzero.c\
 	ft_isalnum\
@@ -69,9 +71,9 @@ UploadGit:
 	@$(SetStream)
 CleanUrl: 
 	@$(CleanUrl)
-GitLibft: GitCommit REPOLibft UploadGit CleanUrl
+Push: GitCommit REPOLibft UploadGit CleanUrl
 	@echo "All Systems OK!"
-#FINAL COMMAND should be: make GitLibft m="message" 
+#FINAL COMMAND should be: make Push m="message" 
 
 
 
@@ -104,8 +106,17 @@ test:
 	@echo "test $<"
 
 
+XX := $(shell date) 
+tt:
+	@echo $(XX)
+	$(shell sleep 2)
+	@echo $(XX)
 
-
+XX = $(shell date) // date will be executed every time you use XX
+tt2:
+	@echo $(XX)
+	$(shell sleep 0.5)
+	@echo $(XX)
 
 
 
