@@ -8,6 +8,9 @@
 
  #@ - to not display in console the command forwarded by this char
  #$ - like a variable declaration
+ #$@ is the name of the target being generated
+ #$< the first prerequisite (usually a source file)
+ #.PHONY: - one that is not really the name of a file; rather it is just a name for a recipe to be executed
 
 
 #GIT UPLOAD COMMANDS (as they appear in the beginning of a new repo):
@@ -40,9 +43,6 @@ SHOUT = say
 SHELL = /bin/sh
 
 
-SetGitUrl = git remote --set-url  origin https://github.com/IDC87/Repo_test.git
-
-
 MakefileREPO = git remote add origin https://github.com/IDC87/Makefile-WIP-.git
 LibftREPO = git remote add origin https://github.com/IDC87/Libft_42_school.git
 TestREPO = git remote add origin https://github.com/IDC87/Repo_test.git
@@ -55,7 +55,7 @@ CleanUrl = git remote rm origin
 #target: dependencies
 #	action
 
-#BLABALALALALALALAAL
+
 
 all: Dictate loading exec
 
@@ -89,6 +89,8 @@ dir:
 
 dir2:
 	current_dir = $(notdir $(shell pwd))
+test:
+	@echo "test $<"
 
 
 
