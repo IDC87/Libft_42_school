@@ -62,7 +62,8 @@ GitLibft: GitCommit REPOLibft UploadGit CleanUrl
 	@echo "All Systems OK!"
 #FINAL COMMAND should be: make GitLibft m="message" 
 
-#SRCS = ft_bzero.c\				ft_isalnum.c\ 
+#SRCS = 		ft_bzero.c\				
+			ft_isalnum.c\ 
 			ft_isalpha.c\			
 			ft_isascii.c\			
 			ft_isdigit.c\			
