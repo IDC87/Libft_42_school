@@ -1,9 +1,6 @@
 # -*- Makefile -*-
 
 
-
-
-
 #  ---- NOTES ----
 
  #@ - to not display in console the command forwarded by this char
@@ -52,10 +49,13 @@ SetStream = git push --set-upstream origin master
 CleanUrl = git remote rm origin
 
 
+
+
 #target: dependencies
 #	action
 
-
+#MAKEFILE MUST CONTAIN RULES: $(NAME), all, clean, fclean, re.
+#BONUSES MUST BE IN _bonus.{c/h}
 
 all: Dictate loading exec
 
@@ -69,7 +69,6 @@ clean:
 
 
 #GIT BLOCK COMMANDS:
-# for message in terminal use like this: make GitCommit m="your message"	
 GitCommit:
 	@git add .
 	@git commit -m "$m"
@@ -81,8 +80,7 @@ CleanUrl:
 	@$(CleanUrl)
 GitLibft: GitCommit REPOLibft UploadGit CleanUrl
 	@echo "All Systems OK!"
-
-#FINAL COMMAND should be: GitLibft m="message" 
+#FINAL COMMAND should be: make GitLibft m="message" 
 
 dir:	
 	current_dir = $(shell pwd)
