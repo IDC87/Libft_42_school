@@ -48,7 +48,16 @@ GitPush = git push -u origin main
 SetStream = git push --set-upstream origin master
 CleanUrl = git remote rm origin
 
-SRCS = ft_bzero.c ft_isalnum ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_memcpy ft_memmove.c ft_memset.c ft_strlen
+SRCS = ft_bzero.c\
+	ft_isalnum\
+	ft_isalpha.c\
+	ft_isascii.c\
+	ft_isdigit.c\
+	ft_isprint.c\
+	ft_memcpy.c\
+	ft_memmove.c\
+	ft_memset.c\
+	ft_strlen.c\
 
 #GIT BLOCK COMMANDS:
 GitCommit:
