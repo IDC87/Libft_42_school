@@ -60,7 +60,7 @@
 
 #  ---- END OF NOTES ----
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g --save --temps
 SHOUT = say
 SHELL = /bin/sh
 
