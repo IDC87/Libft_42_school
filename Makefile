@@ -71,7 +71,7 @@ TestREPO = git remote add origin https://github.com/IDC87/Repo_test.git
 DummyREPO = git remote add origin https://github.com/IDC87/Repo_test.git
 GitPush = git push -u origin main
 SetStream = git push --set-upstream origin master
-CleanUrl = git remote rm origin        
+CleanUrl = git remote rm origin
 
 SRCS = ft_bzero.c\
 	ft_isalnum\
