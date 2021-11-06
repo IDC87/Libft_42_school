@@ -21,7 +21,8 @@
  # -WALL (Enable all warning messages)
  # -WERROR (Make all warnings into erros)
  # -WEXTRA (enable extra warnings)
-
+ # -E (Preprocessor), -S (compiler), -c (assembler)
+ # gcc -c name.c && mv name.o folder/ (compiles then move to another folder)
  #gcc -WALL -WEXTRA -WERROR -c nome.c (para compilar o objecto .o)
 
 #FUNCTIONS
@@ -57,11 +58,15 @@
 #MAKEFILE MUST CONTAIN RULES: $(NAME), all, clean, fclean, re.
 #BONUSES MUST BE IN _bonus.{c/h}
 
+#A FAZER:
+ #ler ficheiros executaveis com todas as opcoes
+
 
 #  ---- END OF NOTES ----
 
 #COMPILING VARIABLES
 CC = gcc
+CCmove = $(CC) -c $(SRCS) && mv
 CFLAGS = -Wall -Wextra -Werror -g #--save --temps
 
 #TARGET PROGRAM
@@ -94,6 +99,9 @@ SRCS = ft_bzero.c\
 	ft_memmove.c\
 	ft_memset.c\
 	ft_strlen.c\
+
+
+
 
 
 
