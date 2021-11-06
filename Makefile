@@ -7,7 +7,7 @@
  #@ - to not display in console the command forwarded by this char
  #$ - like a variable declaration
  #$@ is the name of the target being generated
- #$< the first prerequisite (usually a source file)
+ #$< the first prerequisite (usually a source file) (dependencies)
  #.PHONY: - one that is not really the name of a file; rather it is just a name for a recipe to be executed
  #gcc -c - compiles to the .o files
  #:= variable evaluated once at assignment time 
@@ -53,7 +53,7 @@ TestREPO = git remote add origin https://github.com/IDC87/Repo_test.git
 DummyREPO = git remote add origin https://github.com/IDC87/Repo_test.git
 GitPush = git push -u origin main
 SetStream = git push --set-upstream origin master
-CleanUrl = git remote rm master          
+CleanUrl = git remote rm origin        
 
 SRCS = ft_bzero.c\
 	ft_isalnum\
