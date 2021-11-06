@@ -7,15 +7,26 @@
  #@ - to not display in console the command forwarded by this char
  #$ - like a variable declaration
  #$@ is the name of the target being generated
- #$< the first prerequisite (usually a source file) (dependenciesgit r)
+ #$< the first prerequisite (usually a source file) (dependencies)
  #.PHONY: - one that is not really the name of a file; rather it is just a name for a recipe to be executed
  #gcc -c - compiles to the .o files
  #:= variable evaluated once at assignment time 
  #= evaluated each time it's used (for reference)
+ #wildcard -  wildcard card function in make file is to list all the source files with a particular extension
+ #patsubst - function to rewrite file names
+ # -f to use a makefile with a different name
+
+ #COMPLILING OPTIONS
+ #gcc -WALL -WEXTRA -WERROR
+ # -WALL (Enable all warning messages)
+ # -WERROR (Make all warnings into erros)
+ # -WEXTRA (enable extra warnings)
+
+ #gcc -WALL -WEXTRA -WERROR -c nome.c (para compilar o objecto .o)
 
 #FUNCTIONS
  #$(shell date) - show the current time and date
- #$(shell sleep 'time)
+ #$(shell sleep 'time')
 
 #GIT UPLOAD COMMANDS (as they appear in the beginning of a new repo):
  #echo "# Repo_test" >> README.md
@@ -40,9 +51,16 @@
  # git push --set-upstream origin master - set the current url as upstream
 
 
+ #target: dependencies
+#	action
+
+#MAKEFILE MUST CONTAIN RULES: $(NAME), all, clean, fclean, re.
+#BONUSES MUST BE IN _bonus.{c/h}
+
+
 #  ---- END OF NOTES ----
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror 
+CFLAGS = -Wall -Wextra -Werror -g
 SHOUT = say
 SHELL = /bin/sh
 
@@ -66,6 +84,10 @@ SRCS = ft_bzero.c\
 	ft_memset.c\
 	ft_strlen.c\
 
+#transform .c files in object files
+%.o : %.c
+	$(CC) $(CFLAGS) -c $<
+
 #GIT BLOCK COMMANDS:
 GitCommit:
 	@git add .
@@ -84,11 +106,9 @@ Push: GitCommit REPOLibft UploadGit CleanUrl
 
 
 
-#target: dependencies
-#	action
 
-#MAKEFILE MUST CONTAIN RULES: $(NAME), all, clean, fclean, re.
-#BONUSES MUST BE IN _bonus.{c/h}
+
+
 
 all: Dictate loading exec
 
