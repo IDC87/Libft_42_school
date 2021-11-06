@@ -62,7 +62,7 @@
 
 #COMPILING VARIABLES
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g --save --temps
+CFLAGS = -Wall -Wextra -Werror -g #--save --temps
 
 #TARGET PROGRAM
 TARGET = program
@@ -85,7 +85,7 @@ SetStream = git push --set-upstream origin master
 CleanUrl = git remote rm origin
 
 SRCS = ft_bzero.c\
-	ft_isalnum\
+	ft_isalnum.c\
 	ft_isalpha.c\
 	ft_isascii.c\
 	ft_isdigit.c\
@@ -95,9 +95,16 @@ SRCS = ft_bzero.c\
 	ft_memset.c\
 	ft_strlen.c\
 
+
+
 #transform .c files in object files
 %.o : %.c
-	$(CC) $(CFLAGS) -c $<
+	$(CC) $(CFLAGS) -c $(SRCS)
+
+teste1: %.o
+	$(CC) $^ -o $@
+
+teste2: 
 
 #GIT BLOCK COMMANDS:
 GitCommit:
