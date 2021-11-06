@@ -7,7 +7,7 @@
  #@ - to not display in console the command forwarded by this char
  #$ - like a variable declaration
  #$@ is the name of the target being generated
- #$< the first prerequisite (usually a source file) (dependencies)
+ #$< the first prerequisite (usually a source file) (dependenciesgit r)
  #.PHONY: - one that is not really the name of a file; rather it is just a name for a recipe to be executed
  #gcc -c - compiles to the .o files
  #:= variable evaluated once at assignment time 
@@ -42,7 +42,7 @@
 
 #  ---- END OF NOTES ----
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror 
 SHOUT = say
 SHELL = /bin/sh
 
