@@ -100,7 +100,7 @@ UploadGit:
 CleanUrl: 
 	@$(CleanUrl)
 Push: GitCommit REPOLibft UploadGit CleanUrl
-	@echo "All Systems OK!"
+	@echo "UPDATE SUCCESSFUL! REPO CLEAN ALSO SUCCESSFUL"
 #FINAL COMMAND should be: make Push m="message" 
 
 
