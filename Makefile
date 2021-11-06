@@ -64,6 +64,7 @@
 
 #  ---- END OF NOTES ----
 
+
 #COMPILING VARIABLES
 CC = gcc
 CCmove = $(CC) -c $(SRCS) && mv
@@ -78,8 +79,6 @@ SHELL = /bin/sh
 
 #DIRECTORIES FOR .o FILES
 OBJDIR := OBJECTS/
-
-
 
 MakefileREPO = git remote add origin https://github.com/IDC87/Makefile-WIP-.git
 LibftREPO = git remote add origin https://github.com/IDC87/Libft_42_school.git
@@ -102,17 +101,18 @@ SRCS = ft_bzero.c\
 
 
 
+all: 
+	$(CC) -c $(SRCS)
 
+Libft: $(SRC)
+	$(CC) -c $(SRCS) && mv *.o $(OBJDIR)
 
 
 #transform .c files in object files
 %.o : %.c
 	$(CC) $(CFLAGS) -c $(SRCS)
 
-teste1: %.o
-	$(CC) $^ -o $@
 
-teste2: 
 
 #GIT BLOCK COMMANDS:
 GitCommit:
