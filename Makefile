@@ -104,8 +104,13 @@ SRCS = ft_bzero.c\
 all: 
 	$(CC) -c $(SRCS)
 
+# COMPILE to .o and then moves to proper folder
 Libft: $(SRC)
 	$(CC) -c $(SRCS) && mv *.o $(OBJDIR)
+
+clean:
+	rm -rf ./$(OBJDIR)/*.o
+
 
 
 #transform .c files in object files
