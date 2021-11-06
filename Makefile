@@ -59,10 +59,21 @@
 
 
 #  ---- END OF NOTES ----
+
+#COMPILING VARIABLES
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g --save --temps
+
+#TARGET PROGRAM
+TARGET = program
+
+#EXTRAS
 SHOUT = say
 SHELL = /bin/sh
+
+#DIRECTORIES FOR .o FILES
+OBJDIR := OBJECTS/
+
 
 
 MakefileREPO = git remote add origin https://github.com/IDC87/Makefile-WIP-.git
