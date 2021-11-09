@@ -6,11 +6,9 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 13:00:09 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/10/24 15:01:47 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/11/09 15:03:43 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 void *ft_memset(void *b, int c, size_t len)
 {

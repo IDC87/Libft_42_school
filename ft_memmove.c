@@ -6,11 +6,9 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 18:12:32 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/10/31 23:39:46 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/11/09 15:03:41 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 void *memmove(void *dst, const void *src, size_t len)
 {

@@ -6,12 +6,9 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 12:35:31 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/10/24 12:55:30 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/11/09 15:03:45 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdint.h>
-#include <stdio.h>
 
 int ft_strlen(const char *s)
 {
