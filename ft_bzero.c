@@ -6,7 +6,7 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 15:04:17 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/11/09 15:23:25 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/11/09 20:41:01 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,4 @@ void ft_bzero(void *s, size_t n)
         str[i] = '0';
         i++;
     }
-}
-
-int main(int argc, char **argv)
-{
-    if (argc > 1)
-    {
-        char *str = argv[1];
-        printf("%s\n", argv[1]);
-
-        ft_bzero(argv[1], 0);
-
-        printf("%s\n", argv[1]);
-    }
-
-    return (0);
 }

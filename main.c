@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/24 12:35:31 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/11/09 16:00:58 by ivda-cru         ###   ########.fr       */
+/*   Created: 2021/11/09 15:57:47 by ivda-cru          #+#    #+#             */
+/*   Updated: 2021/11/09 20:43:38 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Libft.h"
 
-size_t ft_strlen(const char *s)
+int main(int argc, char **argv)
 {
-    int i;
+	char *str = argv[1];
+	int n = atoi(argv[2]);
 
-    i = 0;
-    while (s[i] != '\0')
-    i++;
+	ft_bzero(str, n);
 
-    return(i);
+
+	printf("%s\n", str);
+	return (0);
 }
-

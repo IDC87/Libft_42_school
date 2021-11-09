@@ -1,4 +1,17 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/11/06 20:37:19 by ivda-cru          #+#    #+#              #
+#    Updated: 2021/11/09 21:26:29 by ivda-cru         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 # -*- Makefile -*-
+
 
 
 #  ---- NOTES ----
@@ -15,6 +28,7 @@
  #wildcard -  wildcard card function in make file is to list all the source files with a particular extension
  #patsubst - function to rewrite file names
  # -f to use a makefile with a different name
+ # "%.o: %.c" means that any file ending in .o depends on the same filename ending in .c to be present.
 
  #COMPLILING OPTIONS
  #gcc -WALL -WEXTRA -WERROR
@@ -24,6 +38,7 @@
  # -E (Preprocessor), -S (compiler), -c (assembler)
  # gcc -c name.c && mv name.o folder/ (compiles then move to another folder)
  #gcc -WALL -WEXTRA -WERROR -c nome.c (para compilar o objecto .o)
+ # -I (flag that indicates the libft.h)
 
 #FUNCTIONS
  #$(shell date) - show the current time and date
@@ -60,6 +75,9 @@
 
 #A FAZER:
  #ler ficheiros executaveis com todas as opcoes
+
+
+ # VER ESTE LINK : https://cs.colby.edu/maxwell/courses/tutorials/maketutor/
 
 
 #  ---- END OF NOTES ----
@@ -101,8 +119,7 @@ SRCS = ft_bzero.c\
 
 
 
-all: 
-	$(CC) -c $(SRCS)
+all: $(NAME)
 
 # COMPILE to .o and then moves to proper folder
 Libft: $(SRC)
@@ -116,6 +133,7 @@ clean:
 #transform .c files in object files
 %.o : %.c
 	$(CC) $(CFLAGS) -c $(SRCS)
+#	$(CC) -c $^ -o $@ 
 
 
 
@@ -176,6 +194,11 @@ tt2:
 	@echo $(XX)
 	$(shell sleep 0.5)
 	@echo $(XX)
+
+#(taken from a website. To edit later)
+#norminette:
+#	@$(ECHO) "$(CYAN)\nChecking norm for libft...$(DEFAULT)"
+#	@norminette -R CheckForbiddenSourceHeader $(SRC_DIR) $(SRCB_DIR) $(SRCA_DIR) inc/libft.h
 
 
 

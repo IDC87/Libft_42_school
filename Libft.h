@@ -6,7 +6,7 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 14:46:44 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/11/09 15:03:48 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/11/09 17:12:24 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <unistd.h>
 #include <stdlib.h>
-#include <stdio.h>
+#include <stdio.h>      //APAGAR DEPOIS O QUE NAO INTERESSA
 #include <ctype.h>
 #include <string.h>
 
@@ -31,11 +31,11 @@ int ft_isprint(int c);
 
 void *ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 
-void *memmove(void *dst, const void *src, size_t len);
+//void *memmove(void *dst, const void *src, size_t len);
 
 void *ft_memset(void *b, int c, size_t len);
 
-int ft_strlen(const char *s);
+size_t ft_strlen(const char *s);
 
 
 #endif
