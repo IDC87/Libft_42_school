@@ -6,9 +6,11 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 15:04:17 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/11/09 15:03:18 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/11/09 15:23:25 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Libft.h"
 
 void ft_bzero(void *s, size_t n)
 {

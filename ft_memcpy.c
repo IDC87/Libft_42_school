@@ -6,13 +6,11 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 15:34:01 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/11/09 15:03:37 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/11/09 15:25:24 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "Libft.h"
 
 void *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
