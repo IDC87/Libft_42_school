@@ -77,7 +77,7 @@
  #ler ficheiros executaveis com todas as opcoes
 
 
- # VER LINK (Importante) : https://cs.colby.edu/maxwell/courses/tutorials/maketutor/
+ # VER Este LINK (Importante) : https://cs.colby.edu/maxwell/courses/tutorials/maketutor/
 
 
 #  ---- END OF NOTES ----
