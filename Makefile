@@ -197,7 +197,7 @@ tt2:
 	$(shell sleep 0.5)
 	@echo $(XX)
 
-#(taken from a website. To edit laterz)
+#(taken from a website. To edit laterzz)
 #norminette:
 #	@$(ECHO) "$(CYAN)\nChecking norm for libft...$(DEFAULT)"
 #	@norminette -R CheckForbiddenSourceHeader $(SRC_DIR) $(SRCB_DIR) $(SRCA_DIR) inc/libft.h
