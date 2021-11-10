@@ -79,6 +79,8 @@
 
  # VER LINKs (Importante) : https://cs.colby.edu/maxwell/courses/tutorials/maketutor/
 
+ #TESTE DO VS CODE DO WINDOWS!!!!!
+
 
 #  ---- END OF NOTES ----
 
