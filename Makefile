@@ -82,7 +82,7 @@
  
 
 
-#  ---- END OF NOTES ----
+#  /---- END OF NOTES ----/
 
 
 #COMPILING VARIABLES
