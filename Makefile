@@ -53,6 +53,8 @@
  #git remote add origin https://github.com/IDC87/Repo_test.git
  #git push -u origin main
 
+ # git config --global credential.helper cache //////IMPORTANTE! keeps cache token in the computer when using https method
+
  #…or push an existing repository from the command line
  #git remote add origin https://github.com/IDC87/Repo_test.git
  #git branch -M main
