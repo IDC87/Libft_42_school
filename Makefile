@@ -132,6 +132,9 @@ Libft: $(SRC)
 clean:
 	rm -rf ./$(OBJDIR)/*.o
 
+flags:
+	$(CC) $(CFLAGS)
+
 
 
 #transform .c files in object files

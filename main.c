@@ -14,12 +14,26 @@
 
 int main(int argc, char **argv)
 {
-	char *str = argv[1];
-	int n = atoi(argv[2]);
+    if (argc > 1)
+    {
+        char *dst = argv[1];
+        char *src = argv[2];
+        size_t n = atoi(argv[3]);
 
-	ft_bzero(str, n);
+        printf("\nSIZEOF SOURCE IS: %lu", sizeof(src));
 
 
-	printf("%s\n", str);
-	return (0);
+        printf("\n\nDESTINY FUNCTION: %s", dst);
+ 
+        printf("\n\nSOURCE FUNCTION: %s", src);
+
+        printf("\n\nBYTES COPIED: ");
+        printf("%zu", n);
+        
+        //printf("\n\nFT_MEMCPY: %s", ft_memcpy(dst, src, n));
+      
+        //printf("\n   MEMCPY: %s\n\n", memcpy(dst, src, n));
+        
+    }
+    return (0);
 }
