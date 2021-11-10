@@ -191,7 +191,7 @@ tt1:
 	$(shell sleep 2)
 	@echo $(XX)
 
-XX = $(shell date) // date will be executed every time you use XX
+XX = $(shell date) // date will be executed every time you use XXx
 tt2:
 	@echo $(XX)
 	$(shell sleep 0.5)
