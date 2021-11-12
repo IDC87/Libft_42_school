@@ -32,6 +32,7 @@
  # PS1="\W >" -trims the terminal command prompt 
  # PROMPT_DIRTRIM=2 -also trims terminal (number can be changed acording to desire)
  # CTRL + K and then press S - saves all projects at once in VScode
+ # sudo apt-get install -y ascii - instalar tabela ascii no bash (melhor que a por defeito)
 
  #COMPLILING OPTIONS
  #gcc -WALL -WEXTRA -WERROR
