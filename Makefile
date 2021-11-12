@@ -31,6 +31,7 @@
  # "%.o: %.c" means that any file ending in .o depends on the same filename ending in .c to be present.
  # PS1="\W >" -trims the terminal command prompt 
  # PROMPT_DIRTRIM=2 -also trims terminal (number can be changed acording to desire)
+ # CTRL + K and then press S - saves all projects at once in VScode
 
  #COMPLILING OPTIONS
  #gcc -WALL -WEXTRA -WERROR
