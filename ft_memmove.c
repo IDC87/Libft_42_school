@@ -35,7 +35,7 @@ void *ft_memmove(void *dst, const void *src, size_t n)  //atencao que no man a v
     
 }
 
-// Possivelmente esta mal, deve falhar em certos detalhes
+// Em principio este e o memcpy estao certos. ver nos testers!
 
 
 int main ()
