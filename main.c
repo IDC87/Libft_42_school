@@ -29,10 +29,22 @@ int main(int argc, char **argv)
 
         printf("\n\nBYTES COPIED: ");
         printf("%zu", n);
+
+        ft_memcpy(dst, src, n);
+
+        printf("\n\nDESTINY FUNCTION AFTER: %s", dst);
+ 
+        printf("\n\nSOURCE FUNCTION AFTER: %s", src);
+
+        memcpy(dst, src, n);
+
+        printf("\n\nORIGINAL DESTINY FUNCTION AFTER: %s", dst);
+ 
+        printf("\n\nORIGINAL SOURCE FUNCTION AFTER: %s\n\n", src);
         
-        //printf("\n\nFT_MEMCPY: %s", ft_memcpy(dst, src, n));
+        //printf("\n\nFT_MEMCPY: %s %s %d", ft_memcpy(dst, src, n));
       
-        //printf("\n   MEMCPY: %s\n\n", memcpy(dst, src, n));
+        //printf("\n   MEMCPY: %s %s %d\n\n", memcpy(dst, src, n));
         
     }
     return (0);
