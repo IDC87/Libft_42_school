@@ -24,9 +24,25 @@ char *ft_strchr(const char *s, int c)
         return ((char *)s + i);
         i++;
     }
-    return (NULL);
+    if (c == '\0')
+		return ((char *)s + i);
+	return (NULL);
 
 }
 
-// Parece afinal estar certo
+
+
+// Esta certo
+
+int main(void)
+{
+  const char *str = "Try not. Do, or do not. There is no try.";
+  char target = '\0';
+  const char *result = str;
+ 
+  while((result = ft_strchr(result, target)) != NULL) {
+    printf("Found '%c' starting at '%s'\n", target, result);
+    ++result; // Increment result, otherwise we'll find target at the same location
+  }
+}
 
