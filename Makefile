@@ -99,6 +99,10 @@ CFLAGS = -Wall -Wextra -Werror -g #--save --temps
 #TARGET PROGRAM
 TARGET = program
 
+#Trim Terminal
+Trim = PS1="\W >
+Trimlength = PROMPT_DIRTRIM=1
+
 #EXTRAS
 SHOUT = say
 SHELL = /bin/sh
@@ -146,6 +150,8 @@ flags:
 	$(CC) $(CFLAGS) -c $(SRCS)
 #	$(CC) -c $^ -o $@ 
 
+trim:
+	$(Trimlength)
 
 
 #GIT BLOCK COMMANDS:
@@ -159,7 +165,7 @@ UploadGit:
 	@$(SetStream)
 CleanUrl: 
 	@$(CleanUrl)
-Push: GitCommit REPOLibft UploadGit CleanUrl
+push: GitCommit REPOLibft UploadGit CleanUrl
 	@echo
 	@echo "UPDATE SUCCESSFUL! REPO CLEAN ALSO SUCCESSFUL!"
 	@echo
