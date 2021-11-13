@@ -1,5 +1,7 @@
 #include "Libft.h"
 
+
+
 int ft_toupper(int c)
 {
     
@@ -8,18 +10,26 @@ int ft_toupper(int c)
         c = c - 32;
     }
     
+
     return (c);
 }
+
+// ESTE ESTA CERTO, SO RETIRAR O QUE NAO FAZ FALTA
 
 int main(int argc, char **argv)
 {
     int i = 0;
+    
 
     printf("\n UPPER is %c\n\n", ft_toupper('('));
 
-    char *str = argv[1];
+    //char *str = argv[1];
 
-    while(str[i] != '\0')
+    char *str = "GeEks@123\n";
+
+    
+
+    while(str[i])
     {
         printf("%c", ft_toupper(str[i]));
         i++;
