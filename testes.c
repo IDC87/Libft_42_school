@@ -1,16 +1,32 @@
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char
+	*ft_strchr(const char *s, int c)
 {
-	size_t i;
+	int	i;
 
-	if (!dst && !src)
-		return (0);
+	if (!s)
+		return (NULL);
 	i = 0;
-	while (i < n)
+	while (s[i])
 	{
-		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		if (s[i] == (char)c)
+			return ((char*)(s + i));
 		i++;
 	}
-	return (dst);
+	if (s[i] == (char)c)
+		return ((char*)(s + i));
+	return (NULL);
+}
+
+int main(void)
+{
+  const char *str = "Try not. Do, or do not. There is no try.";
+  char target = 'T';
+  const char *result = str;
+ 
+  while((result = strchr(result, target)) != NULL) {
+    printf("Found '%c' starting at '%s'\n", target, result);
+    ++result; // Increment result, otherwise we'll find target at the same location
+  }
 }

@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "Libft.h"
 
 char *ft_strchr(const char *s, int c)
@@ -30,17 +28,5 @@ char *ft_strchr(const char *s, int c)
 
 }
 
-int main(int argc, char **argv)
-{
-    if (argc > 1)
-    {
-    const char *str = argv[1];
-    int c = 97;
+// Parece afinal estar certo
 
-    printf("\n\n%s\n\n", ft_strchr(str, c));
-    }
-
-    return (0);
-
-
-}
