@@ -14,6 +14,7 @@
 
 
 
+
 #  ---- NOTES ----
 
 #OPTIONS
@@ -33,6 +34,27 @@
  # PROMPT_DIRTRIM=2 -also trims terminal (number can be changed acording to desire)
  # CTRL + K and then press S - saves all projects at once in VScode
  # sudo apt-get install -y ascii - instalar tabela ascii no bash (melhor que a por defeito)
+
+ #SHELL TERMINAL OPTIONS ENV
+ # Trimming and colorful terminal - PS1='\e[33;1m\u@\h: \e[31m\W\e[0m\$ '
+ #color options:
+ #export COLOR_NC='\e[0m' # No Color
+ #export COLOR_BLACK='\e[0;30m'
+ #export COLOR_GRAY='\e[1;30m'
+ #export COLOR_RED='\e[0;31m'
+ #export COLOR_LIGHT_RED='\e[1;31m'
+ #export COLOR_GREEN='\e[0;32m'
+ #export COLOR_LIGHT_GREEN='\e[1;32m'
+ #export COLOR_BROWN='\e[0;33m'
+ #export COLOR_YELLOW='\e[1;33m'
+ #export COLOR_BLUE='\e[0;34m'
+ #export COLOR_LIGHT_BLUE='\e[1;34m'
+ #export COLOR_PURPLE='\e[0;35m'
+ #export COLOR_LIGHT_PURPLE='\e[1;35m'
+ #export COLOR_CYAN='\e[0;36m'
+ #export COLOR_LIGHT_CYAN='\e[1;36m'
+ #export COLOR_LIGHT_GRAY='\e[0;37m'
+ #export COLOR_WHITE='\e[1;37m'
 
  #COMPLILING OPTIONS
  #gcc -WALL -WEXTRA -WERROR
@@ -100,12 +122,16 @@ CFLAGS = -Wall -Wextra -Werror -g #--save --temps
 TARGET = program
 
 #Trim Terminal
-Trim = PS1="\W >
+Trim = PS1="\W >"
+Trim2 = PS1="[\W]\\$ "
 Trimlength = PROMPT_DIRTRIM=1
+
 
 #EXTRAS
 SHOUT = say
 SHELL = /bin/sh
+#SHELL := /bin/bash
+count_message = Number of source files in folder
 
 #DIRECTORIES FOR .o FILES
 OBJDIR := OBJECTS/
@@ -138,7 +164,9 @@ Libft: $(SRC)
 	$(CC) -c $(SRCS) && mv *.o $(OBJDIR)
 
 clean:
-	rm -rf ./$(OBJDIR)/*.o
+	rm -rf *.o
+#rm -rf ./$(OBJDIR)/*.o
+
 
 flags:
 	$(CC) $(CFLAGS)
@@ -151,7 +179,18 @@ flags:
 #	$(CC) -c $^ -o $@ 
 
 trim:
-	$(Trimlength)
+	$(Trim)
+trim2:
+	PS1='\e[36;1m\u@\h: \e[34m\W\e[0m\$ '
+
+cfiles:
+	@echo
+	@echo "NUMBER OF SOURCE(.c) FILES ARE:"
+	@ls -l *.c | wc -l
+	@echo
+	@echo "NUMBER OF OBJECT(.o) FILES ARE:"
+	@ls -l *.o | wc -l
+	@echo
 
 
 #GIT BLOCK COMMANDS:
