@@ -6,23 +6,23 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 14:53:37 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/11/14 15:17:37 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/11/14 16:21:23 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Libft.h"
 
+//igual a strchr mas procura se nos primeiros n bytes existe o char a encontrar. Returna Null caso nao encontre
+
 void *ft_memchr(const void *s, int c, size_t n)
 {
     size_t i;
-    char * ttr;
-
-    ttr = (char *)s;
+        
     i = 0;
-    while (ttr[i] == '\0' && i < n)
+    while (i < n)
     {
-        if (ttr[i] == (char)c)
-            return ((char *)ttr + i);
+        if (((unsigned char *)s)[i] == (unsigned char)c)
+            return ((void *)s + i);
         i++;
     }
     return(NULL);
@@ -33,7 +33,7 @@ int main () {
    const char ch = '.';
    char *ret;
 
-   ret = ft_memchr(str, ch, strlen(str));
+   ret = ft_memchr(str, ch, 11);
 
    printf("String after |%c| is - |%s|\n", ch, ret);
 
