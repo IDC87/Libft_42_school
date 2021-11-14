@@ -37,7 +37,7 @@ char *ft_strchr(const char *s, int c)
 int main(void)
 {
   const char *str = "Try not. Do, or do not. There is no try.";
-  char target = '\0';
+  char target = 'T';
   const char *result = str;
  
   while((result = ft_strchr(result, target)) != NULL) {
