@@ -1,32 +1,38 @@
 #include "libft.h"
 
-char
-	*ft_strchr(const char *s, int c)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int	i;
+	size_t h;
+	size_t n;
 
-	if (!s)
-		return (NULL);
-	i = 0;
-	while (s[i])
+	h = 0;
+	if (needle[0] == '\0')
+		return ((char *)haystack);
+	while (haystack[h] != '\0')
 	{
-		if (s[i] == (char)c)
-			return ((char*)(s + i));
-		i++;
+		n = 0;
+		while (haystack[h + n] == needle[n] && (h + n) < len)
+		{
+			if (haystack[h + n] == '\0' && needle[n] == '\0')
+				return ((char *)&haystack[h]);
+			n++;
+		}
+		if (needle[n] == '\0')
+			return ((char *)haystack + h);
+		h++;
 	}
-	if (c == '\0')
-		return ((char *)s + i);
-	return (NULL);
+	return (0);
 }
 
-int main(void)
+int main()
 {
-  const char *str = "Try not. Do, or do not. There is no try.";
-  char target = '\0';
-  const char *result = str;
- 
-  while((result = ft_strchr(result, target)) != NULL) {
-    printf("Found '%c' starting at '%s'\n", target, result);
-    ++result; // Increment result, otherwise we'll find target at the same location
-  }
+    char *str1 = "this is a test string";
+    char *str2 = "is";
+    size_t a = 20;
+
+    char *res = ft_strnstr(str1, str2, a);
+
+    printf("\n\n%s\n\n", res);
+
+    return (0);
 }
