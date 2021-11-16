@@ -1,30 +1,31 @@
-#include "Libft.h"
+#include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char
+	*ft_strchr(const char *s, int c)
 {
-	int		i;
-	char	*res;
+	int	i;
 
-	res = NULL;
+	if (!s)
+		return (NULL);
 	i = 0;
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		if (s[i] == (char)c)
-			res = (char *)s + i;
+			return ((char*)(s + i));
 		i++;
 	}
 	if (c == '\0')
-		res = (char *)s + i;
-	return (res);
+		return ((char *)s + i);
+	return (NULL);
 }
 
 int main(void)
 {
   const char *str = "Try not. Do, or do not. There is no try.";
-  char target = 'T';
+  char target = '\0';
   const char *result = str;
  
-  while((result = ft_strrchr(result, target)) != NULL) {
+  while((result = ft_strchr(result, target)) != NULL) {
     printf("Found '%c' starting at '%s'\n", target, result);
     ++result; // Increment result, otherwise we'll find target at the same location
   }

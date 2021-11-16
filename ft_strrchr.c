@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/14 13:43:37 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/11/14 14:49:27 by ivda-cru         ###   ########.fr       */
+/*   Created: 2021/11/16 02:02:22 by marvin            #+#    #+#             */
+/*   Updated: 2021/11/16 02:02:22 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ char *ft_strrchr(const char *s, int c)
     return(last);
 
 }
+
+// em principio esta certo tambem
 int main(void)
 {
   const char *str = "Try not. Do, or do not. There is no try.";

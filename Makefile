@@ -194,6 +194,9 @@ cfiles:
 
 
 #GIT BLOCK COMMANDS:
+
+pull:
+	@git pull https://github.com/IDC87/Libft_42_school.git
 GitCommit:
 	@git add .
 	@git commit -m "$(shell date)"
