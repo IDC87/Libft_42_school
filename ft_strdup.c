@@ -14,6 +14,22 @@
 
 char *strdup(const char *s)
 {
+    int i;
+    const char *str;
 
-    
+    i = 0;
+    s = (char *)malloc(sizeof(*s) * ft_strlen(s) + 1);
+    if(str == NULL)
+        return (NULL);
+
+    while(s[i] != '\0')
+    {
+        str[i] = s[i];
+        i++;
+    }
+    str[i] = '\0';
+    return (str);
+
 }
+
+// em principio esta certo, mas usar os testers para verificar
