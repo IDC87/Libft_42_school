@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/24 15:04:17 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/11/09 20:41:01 by ivda-cru         ###   ########.fr       */
+/*   Created: 2021/11/18 21:56:53 by marvin            #+#    #+#             */
+/*   Updated: 2021/11/18 21:56:53 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+char *strdup(const char *s)
 {
-    unsigned char *str;
-    size_t i;
 
-    str = (unsigned char *) s;
-    i = 0;
-
-    while (str[i] != '\0' && i < n)
-    {
-        str[i] = '0';
-        i++;
-    }
+    
 }

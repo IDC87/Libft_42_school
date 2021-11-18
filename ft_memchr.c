@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 14:53:37 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/11/14 16:21:23 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/11/18 18:27:50 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "libft.h"
 
 //igual a strchr mas procura se nos primeiros n bytes existe o char a encontrar. Returna Null caso nao encontre
 

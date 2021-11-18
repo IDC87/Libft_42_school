@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "libft.h"
 
 /* The strnstr function locates the first occurrence of the null-terminated string \c little in the string \c big, 
 where not more than \c len characters are searched. Characters that appear after a \0 character are not searched. 

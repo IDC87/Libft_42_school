@@ -6,11 +6,11 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 17:01:07 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/11/16 12:17:08 by marvin           ###   ########.fr       */
+/*   Updated: 2021/11/18 17:56:31 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "libft.h"
 
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
