@@ -32,4 +32,4 @@ char *strdup(const char *s)
 
 }
 
-// em principio esta certo, mas usar os testers para verificar
+// em principio esta certo, mas usar os testers para verificar tudo 
