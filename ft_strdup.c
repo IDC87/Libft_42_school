@@ -18,11 +18,9 @@ char *strdup(const char *s)
     char *str;
 
     str = NULL;
-
-    i = 0;
+    i = 1;
     s = (char *)malloc(sizeof(*s) * ft_strlen(s) + 1);
-    if(str == NULL)
-        return (NULL);
+    
 
     while(s[i] != '\0')
     {
@@ -30,6 +28,9 @@ char *strdup(const char *s)
         i++;
     }
     str[i] = '\0';
+
+    if(str == NULL)
+        return (NULL);
     return (str);
 
 }

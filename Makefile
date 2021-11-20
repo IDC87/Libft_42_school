@@ -34,6 +34,7 @@
  # PROMPT_DIRTRIM=2 -also trims terminal (number can be changed acording to desire)
  # CTRL + K and then press S - saves all projects at once in VScode
  # sudo apt-get install -y ascii - instalar tabela ascii no bash (melhor que a por defeito)
+ # shell find . -type f -name '*.c') - the basic syntax to find stuff
 
  #SHELL TERMINAL OPTIONS ENV
  # Trimming and colorful terminal - PS1='\e[33;1m\u@\h: \e[31m\W\e[0m\$ '
@@ -113,12 +114,13 @@
 #  /---- END OF NOTES ----/
 
 NAME = Libft.a
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS:.c=.o) #Apenas este comando chega como suficiente para criar os objects files
+RM = rm -f
 
 #COMPILING VARIABLES
 CC = gcc
 CCmove = $(CC) -c $(SRCS) && mv
-CFLAGS = -Wall -Wextra -Werror #-g -I #--save --temps
+CFLAGS = -Wall -Wextra -Werror #-I #-g #--save --temps
 HEADER = libft.h
 
 #TARGET PROGRAM
@@ -172,32 +174,41 @@ SRCS = ft_bzero.c\
 	ft_strdup.c\
 
 
-
+#NECESSARIO PARA ENTREGA
 
 all: $(NAME)
+
+$(NAME): $(OBJS)
+#	$(CC) -o $@ $^ $(CFLAGS)
+	@echo "CHEGOU AO FIM"
+
+# clean deletes all Emacs and Vim temporary files along with the executable
+clean:
+	$(RM) $(OBJS)
+#rm -rf ./$(OBJDIR)/*.o
+
+# fclean deletes the Emacs temporary files, the executable, and the object files
+fclean:
+	$(RM) $(NAME)
+
+# re forces recompilation of all source files
+re: fclean all
+
+
+
+
+
+
 
 # COMPILE to .o and then moves to proper folder
 Libft: $(SRC)
 	$(CC) -c $(SRCS) && mv *.o $(OBJDIR)
 
-clean:
-	rm -rf *.o
-#rm -rf ./$(OBJDIR)/*.o
-
-
-flags:
-	$(CC) $(CFLAGS)
-
 
 
 #transform .c files in object files
-%.o : %.c $(HEADER)
-#	$(CC) $(CFLAGS) -c $(SRCS)
-	$(CC) -c -o $@ $< $(CFLAGS)
-
-FILES: $(OBJS)
-	$(CC) -o $@ $^ $(CFLAGS)
-	
+#%.o : %.c $(HEADER)
+#	$(CC) -c -o $@ $< $(CFLAGS)	
 
 trim:
 	$(Trim)
@@ -235,23 +246,12 @@ push: GitCommit REPOLibft UploadGit CleanUrl
 #FINAL COMMAND should be: make Push m="message" 
 
 
-
-
-
-
-
-
-all: Dictate loading exec
-
 #Dictate: 
 #	$(SHOUT) executing makefile
 loading:
 	$(CC) $(CFLAGS) loading_bar.c -o loading && ./loading
 #exec:
 #	./loading
-clean:
-
-
 
 
 dir:	
