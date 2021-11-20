@@ -20,8 +20,8 @@
 #OPTIONS
  #@ - to not display in console the command forwarded by this char
  #$ - like a variable declaration
- #$@ is the name of the target being generated
- #$< the first prerequisite (usually a source file) (dependencies)
+ #$@ is the NAME of the target being generated
+ #$< the NAME of the first prerequisite (usually a source file) (dependencies)
  #.PHONY: - one that is not really the name of a file; rather it is just a name for a recipe to be executed
  #gcc -c - compiles to the .o files
  #:= variable evaluated once at assignment time 
@@ -112,11 +112,14 @@
 
 #  /---- END OF NOTES ----/
 
+NAME = Libft.a
+OBJS = $(SRCS:.c=.o)
 
 #COMPILING VARIABLES
 CC = gcc
 CCmove = $(CC) -c $(SRCS) && mv
-CFLAGS = -Wall -Wextra -Werror -g #--save --temps
+CFLAGS = -Wall -Wextra -Werror #-g -I #--save --temps
+HEADER = Libft.h
 
 #TARGET PROGRAM
 TARGET = program
@@ -167,7 +170,7 @@ SRCS = ft_bzero.c\
 	ft_atoi\
 	ft_calloc\
 	ft_strdup\
-	
+
 
 
 
@@ -188,9 +191,13 @@ flags:
 
 
 #transform .c files in object files
-%.o : %.c
-	$(CC) $(CFLAGS) -c $(SRCS)
-#	$(CC) -c $^ -o $@ 
+%.o : %.c $(HEADER)
+#	$(CC) $(CFLAGS) -c $(SRCS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+FILES: $(OBJS)
+	$(CC) -o $@ $^ $(CFLAGS)
+	
 
 trim:
 	$(Trim)
