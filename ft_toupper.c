@@ -29,7 +29,7 @@ int ft_toupper(int c)
 
 // ESTE ESTA CERTO, SO RETIRAR O QUE NAO FAZ FALTA
 
-int main(int argc, char **argv)
+/* int main(int argc, char **argv)
 {
     int i = 0;
     
@@ -51,4 +51,4 @@ int main(int argc, char **argv)
     printf("\n\n");
 
     return (0);
-}
+} */

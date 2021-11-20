@@ -20,9 +20,9 @@ int ft_isdigit(int c)
         return(0);
 }
 
-int main(int argc, char **argv)
+/* int main(int argc, char **argv)
 {
     int a = argv[1];
     printf("%d\n", ft_isdigit('3'));
     return(0);
-}
+} */

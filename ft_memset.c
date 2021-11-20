@@ -27,7 +27,7 @@ void *ft_memset(void *b, int c, size_t len)
     return(str);
 }
 
-int main(int argc, char **argv)
+/* int main(int argc, char **argv)
 {
     if(argc > 1)
     {
@@ -38,4 +38,4 @@ int main(int argc, char **argv)
     
 
     return (0);
-}
+} */

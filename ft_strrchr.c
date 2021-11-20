@@ -33,7 +33,7 @@ char *ft_strrchr(const char *s, int c)
 }
 
 // em principio esta certo tambem
-int main(void)
+/* int main(void)
 {
   const char *str = "Try not. Do, or do not. There is no try.";
   char target = 'T';
@@ -43,4 +43,4 @@ int main(void)
     printf("Found '%c' starting at '%s'\n", target, result);
     ++result; // Increment result, otherwise we'll find target at the same location
   }
-}
+} */

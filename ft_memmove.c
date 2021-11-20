@@ -38,7 +38,7 @@ void *ft_memmove(void *dst, const void *src, size_t n)  //atencao que no man a v
 // Em principio este e o memcpy estao certos. ver nos testers!
 
 
-int main ()
+/* int main ()
 {
     char dest[] = "Aticleworld";
     const char src[]  = "Amlendra";
@@ -50,7 +50,7 @@ int main ()
     //Source and destination after memmove
     printf("After memmove >> dest = %s, src = %s\n\n", dest, src);
     return 0;
-}
+} */
 
 /* int main()
 {

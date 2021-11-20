@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 14:53:37 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/11/18 18:27:50 by marvin           ###   ########.fr       */
+/*   Updated: 2021/11/20 15:59:47 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void *ft_memchr(const void *s, int c, size_t n)
     return(NULL);
 }
 
-int main () {
+/* int main () {
    const char str[] = "http://www.tutorialspoint.com";
    const char ch = '.';
    char *ret;
@@ -38,7 +38,7 @@ int main () {
    printf("String after |%c| is - |%s|\n", ch, ret);
 
    return(0);
-}
+} */
 
 
 

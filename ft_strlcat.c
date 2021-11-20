@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 18:48:01 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/11/18 17:56:31 by marvin           ###   ########.fr       */
+/*   Updated: 2021/11/20 15:50:37 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlen(char *len)
+/* unsigned int	ft_strlen(char *len)
 {
 	int	j;
 
@@ -22,7 +22,7 @@ unsigned int	ft_strlen(char *len)
 		j++;
 	}
 	return (j);
-}
+} */
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
@@ -42,7 +42,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	dest[i] = '\0';
 	return (ft_strlen(dest) + ft_strlen(&src[j]));
 }
-#include <stdio.h>
+/* #include <stdio.h>
 int main()
   {
       char str1 [] = "it is \0 everything sucks";
@@ -54,4 +54,4 @@ int main()
      printf("%u\n", ft_strlcat(str0, str2, 26));
      printf("%s\n", str0);
      return (0);
- }
+ } */

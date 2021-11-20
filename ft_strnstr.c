@@ -6,7 +6,7 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 17:44:24 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/11/20 15:12:44 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/11/20 15:59:59 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char 	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 //capaz de estar certo, perhaps :/
 
-int main()
+/* int main()
 {
     char *str1 = "a moar rigid test now";
     char *str2 = "mo";
@@ -56,4 +56,4 @@ int main()
     printf("\n\n%s\n\n", res);
 
     return (0);
-}
+} */

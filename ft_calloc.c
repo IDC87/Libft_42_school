@@ -33,7 +33,7 @@ with the result that an incorrectly sized block of memory would be allocated:
 
 //podera estar certo, verificar se e com o char nulo que se usa!
 
-int main(int argc, char **argv)
+/* int main(int argc, char **argv)
 {
     char *str = argv[1];
     printf("\nYour chosen string has: %ld chars\n\n", strlen(str));
@@ -46,6 +46,6 @@ int main(int argc, char **argv)
     free(str2);
 
     return (0);
-}
+} */
 
 // void *malloc(size_t n_bytes)

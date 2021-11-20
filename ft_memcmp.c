@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 17:01:07 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/11/18 17:56:31 by marvin           ###   ########.fr       */
+/*   Updated: 2021/11/20 15:55:26 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    int i;
+    size_t i;
 
     i = 0;
     while (i < n)
@@ -27,7 +27,7 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 
 }
 
-int main()
+/* int main()
 {
     char *str1 = "DWgaOtP12df0";
     char *str2 = "DWGAOTP12DF0";
@@ -35,4 +35,4 @@ int main()
 
     printf("Diference between the two strings is: %d ", ft_memcmp(str1, str2, strlen(str1)));
     return (0);
-}
+} */
