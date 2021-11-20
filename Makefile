@@ -113,7 +113,7 @@
 
 #  /---- END OF NOTES ----/
 
-NAME = Libft.a
+NAME = libft.a
 OBJS = $(SRCS:.c=.o) #Apenas este comando chega como suficiente para criar os objects files
 RM = rm -f
 
@@ -172,15 +172,21 @@ SRCS = ft_bzero.c\
 	ft_atoi.c\
 	ft_calloc.c\
 	ft_strdup.c\
+	ft_substr.c\
+	
 
 
-#NECESSARIO PARA ENTREGA
+#>>>>>NECESSARIO PARA ENTREGA<<<<<<
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
+	ranlib $(NAME)
+# rcs means replace, create, sort
 #	$(CC) -o $@ $^ $(CFLAGS)
-	@echo "CHEGOU AO FIM"
+	@echo ">>>>>>>>>THE END<<<<<<<<<<"
+	@echo ">>>>FILE $(NAME) CREATED!<<<<"
 
 # clean deletes all Emacs and Vim temporary files along with the executable
 clean:
@@ -194,16 +200,18 @@ fclean:
 # re forces recompilation of all source files
 re: fclean all
 
+.PHONY: all clean fclean re
 
+#>>>>>FIM DOS FICHEIROS OBRIGATORIOS<<<<<<
 
-
-
+tclean:
+	$(RM) $(OBJS) $(NAME)
+	@echo ">>>>>ALL .o FILES AND .a ERASED<<<<<"
 
 
 # COMPILE to .o and then moves to proper folder
 Libft: $(SRC)
 	$(CC) -c $(SRCS) && mv *.o $(OBJDIR)
-
 
 
 #transform .c files in object files

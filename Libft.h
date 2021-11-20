@@ -66,6 +66,7 @@ void *ft_calloc(size_t nmeb, size_t size);
 
 char *strdup(const char *s);
 
+char *ft_substr(char const *s, unsigned int start, size_t len);
 
 
 #endif
