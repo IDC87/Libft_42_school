@@ -6,7 +6,7 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 21:14:46 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/11/20 23:15:01 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/11/22 23:46:27 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,9 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 
     if(!s)
         return (0);
-    
-
+        
     i = 0;
-    str = (char *)malloc(sizeof(*s) * ft_strlen(s));
-
-    
+    str = (char *)malloc(sizeof(*s) * ft_strlen(s) + 1);    
 
     if(str == NULL)
         return (NULL);
@@ -35,9 +32,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
         start++;
         i++;
     }
-    str[i] = '\0';
-
-        
+    str[i] = '\0';    
     
 
     return(str);
