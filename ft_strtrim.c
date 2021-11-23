@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 20:24:37 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/11/22 23:37:37 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/11/23 16:42:59 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ char *ft_strtrim(char const *s1, char const *set)
 {
     int i;
     int j;
-    char *str;
+    //char *str;
 
-    str = (char *)malloc(sizeof(*s1) * (ft_strlen(s1)));
+    //str = (char *)malloc(sizeof(*s1) * (ft_strlen(s1)));
 
     i = 0;
     j = strlen(s1) - 1;
