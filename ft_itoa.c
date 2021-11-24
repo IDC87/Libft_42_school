@@ -43,7 +43,7 @@ char *ft_itoa(int n)
         str[0] = '0'; 
 
     if (n == -2147483648)
-        return(strdup("-2147483648"));
+        return(ft_strdup("-2147483648"));
 
     while(len--)
     {
