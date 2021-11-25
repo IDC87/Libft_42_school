@@ -20,21 +20,16 @@ char **ft_split(char const *s)
 
     i = 0;
 
-     
-     
-    while(i < 6)
-    {
-        j = 0;
-        while(j < 8)
-        {
-            if(s[j] == ' ')
-            arr[i][j] = s[i];
-            printf("%s", &arr[i][j]);
-            j++;
+    // tambem da para usar calloc em principio. Para arrays ate e melhor
+    // arr = (char**)calloc(n, sizeof(char *))
 
-        }
+    arr = (char **)malloc(sizeof(char *) * 3);
+    while(i < 3)
+    {
+        arr[i] = (char*)malloc(sizeof(char) * 3);
         i++;
     }
+
 
     return (arr);
 
