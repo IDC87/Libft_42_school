@@ -20,16 +20,29 @@ with the result that an incorrectly sized block of memory would be allocated:
 
            malloc(nmemb * size); */
 
- void *ft_calloc(size_t nmeb, size_t size)
+  void *ft_calloc(size_t nmeb, size_t size)
 {
-    if (nmeb == 0 || size == 0)
-        return (NULL);
-    char *str = (char *)malloc(nmeb * size);
-    if(str != NULL)
-    memset((char *)str, '\0', nmeb * size);
+        
+    char *str;
+    
+    str = (void *)malloc(nmeb * size);
+    if(str == NULL)
+    return (NULL);    
+    ft_bzero(str, nmeb * size);
     return (str);
 
-} 
+}  
+
+/* void	*ft_calloc(size_t count, size_t size)
+{
+	void	*ptr;
+
+	ptr = (void *)malloc(size * count);
+	if (ptr == NULL)
+		return (NULL);
+	ft_bzero(ptr, count * size);
+	return (ptr);
+} */
 
 //podera estar certo, verificar se e com o char nulo que se usa!
 

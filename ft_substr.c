@@ -6,7 +6,7 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 21:14:46 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/11/22 23:46:27 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/11/26 22:05:17 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
     char *str;
 
     if(!s)
-        return (0);
+        return (NULL);
         
     i = 0;
-    str = (char *)malloc(sizeof(*s) * ft_strlen(s) + 1);    
+    str = (char *)malloc(sizeof(char) * (len + 1));    
 
     if(str == NULL)
         return (NULL);
 
-    while(i < len && start < ft_strlen(s))
+    while(i < len && start < ft_strlen(s) + 1)
     {
         str[i] = s[start];
         start++;
@@ -37,6 +37,8 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 
     return(str);
 }
+
+
 
 /* int main(int argc, char **argv)
 {
