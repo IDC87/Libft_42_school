@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "libft.h"
 
 int itoa_size(int n)
 {
@@ -35,15 +35,15 @@ char *ft_itoa(int n)
     len = itoa_size(n);    
     i = 0;   
     z = 0;
-    str = (char *)malloc(sizeof(char) * (len + 1));
+    str = (char *)malloc(sizeof(char) * (len) + 1);
      if(str == NULL)
         return (NULL);    
 
     if (n == 0)
         str[0] = '0'; 
 
-    if (n == -2147483648)
-        return(ft_strdup("-2147483648"));
+    if (n == -2147483648) 	
+        return(ft_strdup("-2147483648")); //preciso arranjar a funcao ft_stardup primeiro
 
     while(len--)
     {

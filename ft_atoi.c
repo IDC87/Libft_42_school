@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 10:26:15 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/11/18 17:56:31 by marvin           ###   ########.fr       */
+/*   Updated: 2021/11/26 17:39:45 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,27 @@ int	ft_atoi(char *str)
 	int	sig;
 	int	j;
 
-	res = 0;
+	
 	sig = 1;
 	j = 0;
-	while (str[j] == ' ' || (str[j] >= '\t' && str[j] <= '\r'))
+
+	
+	while ((str[j] == ' ' || (str[j] >= '\t' && str[j] <= '\r')) && str[j] != '\0')
 		j++;
-	while (str[j] == '+' || str[j] == '-')
+	while ((str[j] == '+' || str[j] == '-') && str[j] != '\0')
 	{
 		if (str[j] == '-')
 			sig = sig * (-1);
 		j++;
 	}
-	while (str[j] >= '0' && str[j] <= '9')
+	res = 0;
+	while ((str[j] >= '0' && str[j] <= '9') && str[j] != '\0')
 	{
 		res = (res * 10) + (str[j] - '0');
 		j++;
 	}
 	return (res * sig);
 }
+
+
+

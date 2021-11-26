@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+ /* #include "libft.h"
 
-char **ft_split(char const *s)
+char **ft_split(char const *s, char c)
 {
-    char **arr;
+  char **arr;
     int i;
     int j;
 
@@ -28,15 +28,15 @@ char **ft_split(char const *s)
     {
         arr[i] = (char*)malloc(sizeof(char) * 3);
         i++;
-    }
-
+    } 
+ 
 
     return (arr);
 
 }
 
-int main (int argc, char **argv)
+ int main (int argc, char **argv)
 {
     printf("\n\n %s \n\n", ft_split("TESTE"));
     return (0);
-}
+} */

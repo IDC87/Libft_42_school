@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 20:22:53 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/11/18 17:56:31 by marvin           ###   ########.fr       */
+/*   Updated: 2021/11/26 20:49:49 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,19 @@
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;
+	unsigned int src_size;
 
 	i = 0;
-	while (i < size && src[i])
+	src_size = ft_strlen(src);	
+	if(size != 0)
 	{
-		dest[i] = src[i];
-		i++;
-	}
-	while (i < size)
-	{
+		while ((i < size - 1) && src[i])
+		{
+			dest[i] = src[i];
+			i++;
+		}
 		dest[i] = '\0';
-		i++;
 	}
-	i = 0;
-	while (dest[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	
+	return (src_size);
 }

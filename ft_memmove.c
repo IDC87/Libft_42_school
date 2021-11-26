@@ -12,28 +12,105 @@
 
 #include "libft.h"
 
-void *ft_memmove(void *dst, const void *src, size_t n)  //atencao que no man a variavel esta como dest
+void *ft_memmove(void *dst, const void *src, size_t len)  //atencao que no man a variavel esta como dest
 {
     size_t i;
-    char temp[n];
+    char *tempdst;
+    const char *tempsrc;
+    
+
+    if(dst == 0 && src == 0)
+    return(NULL);
 
     i = 0;
-    while (i < n)
+
+
+    if (dst <= src)
     {
-        temp[i] = ((unsigned char *)src)[i];
-        i++;
+        tempdst = dst;
+        tempsrc = src;
+
+        while (i < len)
+        {
+            tempdst[i] = tempsrc[i];
+            i++;
+        }
+    }
+    else 
+    {
+        tempdst = dst;
+        tempsrc = src;   
+
+        i = len - 1; // condicao para overlap. chega ao final da string.
+        while (i < len)
+    {
+        ((unsigned char *)dst)[i] = tempsrc[i];
+        i--;
+    }
     }
 
-    i = 0;
-    while (i < n)
-    {
-        ((unsigned char *)dst)[i] = temp[i];
-        i++;
-    }
+    
 
     return(dst);
     
 }
+
+//The trick here is to use a temp array instead of directly copying from src to dest. 
+//The use of temp array is important to handle cases when source and destination addresses are overlapping.
+
+/* void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	char		*temp;
+	const char	*s;
+
+	if (dst == 0)
+		return (NULL);
+	if (dst <= src)
+	{
+		temp = dst;
+		s = src;
+		while (len--)
+			*temp++ = *s++;
+	}
+	else
+	{
+		temp = dst;
+		temp += len;
+		s = src;
+		s += len;
+		while (len--)
+			*--temp = *--s;
+	}
+	return (dst);
+}
+
+
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	size_t i;
+
+	if (!dst && !src)
+		return (0);
+	i = 0;
+	if ((size_t)dst - (size_t)src < len)
+	{
+		i = len - 1;
+		while (i < len)
+		{
+			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+			i--;
+		}
+	}
+	else
+	{
+		while (i < len)
+		{
+			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+			i++;
+		}
+	}
+	return (dst);
+} */
 
 // Em principio este e o memcpy estao certos. ver nos testers!
 
