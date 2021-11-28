@@ -241,6 +241,9 @@ cfiles:
 
 #GIT BLOCK COMMANDS:
 
+fetch: 
+	@git fetch https://github.com/IDC87/Libft_42_school.git
+
 pull:
 	@git pull https://github.com/IDC87/Libft_42_school.git
 GitCommit:
