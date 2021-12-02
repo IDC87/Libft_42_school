@@ -34,7 +34,7 @@
     return(token_count);
  }
 
-char *token(char *s, int columns, int index)
+char *token(char const *s, int columns, int index)
 {
     char *token;
     int i;
@@ -53,22 +53,18 @@ char *token(char *s, int columns, int index)
     }
     token[i] = '\0';
 
-    printf("\n\nCOLUMNS: %d\n", columns);
-
-    printf("\nINDEX IS: %d\n\n", index);
-
-    printf("TOKEN POS IS: %d\n\n\n", token_pos);
+   
 
     //printf("%s", token);
 
     return (token);
 }
 
- char **ft_split(char *s, char delimeter)
+ char **ft_split(char const *s, char delimeter)
  {
      int rows;
      int columns;
-     int i;
+     size_t i;
      char **words;   
      //printf("its doin something - 1\n");  
 
@@ -84,7 +80,7 @@ char *token(char *s, int columns, int index)
      columns = 0;
      i = 0;            
 
-     while (i < strlen(s) + 1)
+     while (i < ft_strlen(s) + 1)
      {
         // printf("its doin something s[%d] %c - 3\n", i, s[i]);
          if (s[i] == delimeter || s[i] == '\0')
@@ -108,7 +104,7 @@ char *token(char *s, int columns, int index)
      return (words);
  }
 
-int main (int argc, char **argv)
+/* int main (int argc, char **argv)
 {
     char *str = "         Return an array of shit";
     //ft_split(str, ' ');
@@ -121,4 +117,4 @@ int main (int argc, char **argv)
         i++;
     }
     return (0);
-}
+} */
