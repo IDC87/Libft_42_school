@@ -12,63 +12,113 @@
 
  #include "libft.h"
 
- int number_of_tokens(char const *s, char delimeter)
+ static int number_of_tokens(char const *s, char delimeter)
  {
-      int i;
-    int j;   
-    int len = 0;
-    int token_count;
+    int i;  
+    int len;
+    int token_count;   
 
     i = 0;
+    len = 0;
+    if (!(*s))
+        return (0);    
     token_count = 0;
     while (s[i] != '\0')
     {
-        if (s[i] == delimeter)
-        len = 0;
-        else if(++len == 1)
-        token_count++;        
-        i++;
-    }
+        if (s[i] == delimeter)        
+            len = 0;        
+        else if(++len == 1)             
+            token_count++;
+        i++;        
+    }    
     return(token_count);
-
  }
 
-char **ft_split(char const *s )//char c)
+char *token(char *s, int columns, int index)
 {
-  char **arr;
-  int i;
-  int lines;
-  int columns;
-  char delimeter = ' ';
+    char *token;
+    int i;
+    int token_pos;
 
-     i = 0;
-    lines = 0;
-    columns = 0;
+    i = 0;
+    token_pos = index - columns;
+
     
-    lines = number_of_tokens(s, delimeter);
-    //printf("\n\n %d \n\n", lines);
-
-    // tambem da para usar calloc em principio. Para arrays ate e melhor
-    // arr = (char**)calloc(n, sizeof(char *))
- 
-
-    arr = (char **)malloc(sizeof(char *) * lines); 
-    while(i < lines)
+    token = (char*)malloc(sizeof(char) * (columns + 1));
+    while(i <= columns)
     {
-        arr[i] = (char*)malloc(sizeof(char) * columns);
+        token[i] = s[token_pos];
         i++;
-    } 
+        token_pos++;
+    }
+    token[i] = '\0';
 
+    printf("\n\nCOLUMNS: %d\n", columns);
 
+    printf("\nINDEX IS: %d\n\n", index);
 
- 
-//para fazer o free fazer o mesmo para a alocacao mas comecar ao contrario, com o ciclo primeiro.
-    return (**arr);
+    printf("TOKEN POS IS: %d\n\n\n", token_pos);
 
+    //printf("%s", token);
+
+    return (token);
 }
 
- int main (int argc, char **argv)
+ char **ft_split(char *s, char delimeter)
+ {
+     int rows;
+     int columns;
+     int i;
+     char **words;   
+     //printf("its doin something - 1\n");  
+
+     //printf("\n\nNUMBER OF TOKENS IS: %d\n\n", number_of_tokens(s, delimeter));
+
+     words = (char **)malloc(sizeof(char *) * (number_of_tokens(s, delimeter) + 1));
+
+     
+
+     //printf("its doin something - 2\n");
+     
+     rows = 0;
+     columns = 0;
+     i = 0;            
+
+     while (i < strlen(s) + 1)
+     {
+        // printf("its doin something s[%d] %c - 3\n", i, s[i]);
+         if (s[i] == delimeter || s[i] == '\0')
+         {
+             //printf("its doin something - 6"); 
+             words[rows] = token(s, columns, i);
+             columns = 0;
+             rows++; 
+         }
+         else
+         {         
+             columns++; 
+             //printf("its doin something - 4\n");  
+         } 
+         i++;
+     }
+     words[rows] = NULL;
+
+       /* for(i=0; i < rows; i++)
+        printf(" %s\n",*words);   */
+     return (words);
+ }
+
+int main (int argc, char **argv)
 {
-    printf("\n\n %s \n\n", ft_split("Returns an array of strings"));
+    char *str = "         Return an array of shit";
+    //ft_split(str, ' ');
+
+    int i = 0;
+    char **test = ft_split(str, ' ');
+    while (test[i])
+    {
+        printf("\n %s \n\n", test[i]);
+        i++;
+    }
     return (0);
 }
