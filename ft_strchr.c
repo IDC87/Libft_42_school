@@ -33,7 +33,7 @@ char *ft_strchr(const char *s, int c)
 
 // Esta certo
 
-int main(void)
+/* int main(void)
 {
   const char *str = "Try not. Do, or do not. There is no try.";
   char target = ' ';
@@ -44,4 +44,4 @@ int main(void)
     ++result; // Increment result, otherwise we'll find target at the same location
   }
 }
-
+ */

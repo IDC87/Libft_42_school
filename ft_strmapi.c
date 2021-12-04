@@ -6,7 +6,7 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 15:28:10 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/12/04 18:41:23 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/12/04 19:02:11 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@
 
     str = ft_strdup((char const *)s); //sem o cast o tester diz que nao aloca.
     if (str == NULL)
-        return (NULL);       
+        return (NULL);  
+
+      if (!s || !f)
+		return (NULL);
 
     i = 0;
     while (str[i] != '\0')
