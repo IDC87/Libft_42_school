@@ -44,7 +44,7 @@ char *token(char const *s, int columns, int index)
     token_pos = index - columns;
 
     
-    token = (char*)malloc(sizeof(char) * (columns + 1));
+    token = (char *)malloc(sizeof(char) * (columns + 1));
     while(i <= columns)
     {
         token[i] = s[token_pos];
