@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 20:24:37 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/12/04 20:42:22 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/12/06 14:48:55 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 char *ft_strtrim(char const *s1, char const *set)
 {
-    int i;
     size_t j;
     //char *str;
 
@@ -22,7 +21,6 @@ char *ft_strtrim(char const *s1, char const *set)
     if(!s1 || !set)
     return (0);
 
-    i = 0;
     
     while(*s1 && ft_strchr(set, *s1))
     s1++;
