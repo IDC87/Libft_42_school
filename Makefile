@@ -210,7 +210,7 @@ clean:
 #rm -rf ./$(OBJDIR)/*.o
 
 # fclean deletes the Emacs temporary files, the executable, and the object files
-fclean:
+fclean: clean
 	$(RM) $(NAME)
 
 # re forces recompilation of all source files

@@ -6,7 +6,7 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 15:28:10 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/12/04 19:02:11 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/12/07 21:41:51 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,19 @@
  char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
     int i;
-    char *str;      
+    char *str;   
+
+    if (!s)
+        return (NULL);  
 
     str = ft_strdup((char const *)s); //sem o cast o tester diz que nao aloca.
     if (str == NULL)
         return (NULL);  
 
-      if (!s || !f)
-		return (NULL);
+      
 
     i = 0;
+    
     while (str[i] != '\0')
         {
             str[i] = f(i, s[i]);

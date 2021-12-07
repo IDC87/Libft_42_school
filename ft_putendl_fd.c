@@ -6,7 +6,7 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 19:53:03 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/12/04 19:55:09 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/12/07 21:40:10 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void ft_putendl_fd(char *s, int fd)
     int i;
     
     i = 0;
+    if (!s)
+        return ;
     while(s[i] != '\0')
     {
         write(fd, &s[i], 1);

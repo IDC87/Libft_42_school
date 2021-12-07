@@ -6,115 +6,94 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 12:29:39 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/12/02 22:52:09 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/12/07 14:56:05 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
- static int number_of_tokens(char const *s, char delimeter)
- {
-    int i;  
-    int len;
-    int token_count;   
-
-    i = 0;
-    len = 0;
-    if (!(*s))
-        return (0);    
-    token_count = 0;
-    while (s[i] != '\0')
-    {
-        if (s[i] == delimeter)        
-            len = 0;        
-        else if(++len == 1)             
-            token_count++;
-        i++;        
-    }    
-    return(token_count);
- }
-
-char *token(char *s, int columns, int index)
+static int	str_words(char const *str, char sep)
 {
-    char *token;
-    int i;
-    int token_pos;
+	int	i;
+	int	result;
 
-    i = 0;
-    token_pos = index - columns;
-
-    
-    token = (char*)malloc(sizeof(char) * (columns + 1));
-    while(i <= columns)
-    {
-        token[i] = s[token_pos];
-        i++;
-        token_pos++;
-    }
-    token[i] = '\0';
-
-    printf("\n\nCOLUMNS: %d\n", columns);
-
-    printf("\nINDEX IS: %d\n\n", index);
-
-    printf("TOKEN POS IS: %d\n\n\n", token_pos);
-
-    //printf("%s", token);
-
-    return (token);
+	i = 0;
+	result = 0;
+	while (str[i])
+	{
+		while (str[i] == sep && str[i])
+			i++;
+		if (str[i] == '\0')
+			break ;
+		while (str[i] != sep && str[i])
+			i++;
+		result++;
+	}
+	return (result);
 }
 
- char **ft_split(char *s, char delimeter)
- {
-     int rows;
-     int columns;
-     int i;
-     char **words;   
-     //printf("its doin something - 1\n");  
+static	char	*get_next_word(const char *str, int *i, char sep)
+{
+	int		j;
+	char	*new;
 
-     //printf("\n\nNUMBER OF TOKENS IS: %d\n\n", number_of_tokens(s, delimeter));
+	while (str[*i] == sep)
+		if (str[(*i)++] == '\0')
+			return (NULL);
+	j = 0;
+	while (str[*i + j] != sep && str[*i + j])
+		j++;
+	if (j != 0)
+	{
+		new = (char *)malloc(sizeof(char) * (j + 1));
+		if (new == NULL)
+			return (NULL);
+		j = 0;
+		while (str[*i] != sep && str[*i])
+			new[j++] = str[(*i)++];
+		new[j] = '\0';
+	}
+	else
+		return (NULL);
+	return (new);
+}
 
-     words = (char **)malloc(sizeof(char *) * (number_of_tokens(s, delimeter) + 1));
+char	**ft_split(char const *str, char sep)
+{
+	char	**list;
+	char	*word;
+	int		*i;
+	int		j;
+	int		k;
 
-     
-
-     //printf("its doin something - 2\n");
-     
-     rows = 0;
-     columns = 0;
-     i = 0;            
-
-     while (i < strlen(s) + 1)
-     {
-        // printf("its doin something s[%d] %c - 3\n", i, s[i]);
-         if (s[i] == delimeter || s[i] == '\0')
-         {
-             //printf("its doin something - 6"); 
-             words[rows] = token(s, columns, i);
-             columns = 0;
-             rows++; 
-         }
-         else
-         {         
-             columns++; 
-             //printf("its doin something - 4\n");  
-         } 
-         i++;
-     }
-     words[rows] = NULL;
-
-       /* for(i=0; i < rows; i++)
-        printf(" %s\n",*words);   */
-     return (words);
- }
+	list = (char **)malloc(sizeof(char *) * (str_words(str, sep) + 1));
+	if (list == NULL)
+		return (NULL);
+	j = 0;
+	i = &j;
+	k = 0;
+	while (k < str_words(str, sep))
+	{
+		word = get_next_word(str, i, sep);
+		if (word == NULL)
+			break ;
+		list[k++] = word;
+	}
+	list[k] = NULL;
+	return (list);
+}
 
 int main (int argc, char **argv)
 {
-    char *str = "         Return an array of shit";
+    char *str = "merda";
     //ft_split(str, ' ');
 
     int i = 0;
-    char **test = ft_split(str, ' ');
+
+    printf("%d", str_words(str, '\0'));
+
+
+    char **test = ft_split(str, '\0');
     while (test[i])
     {
         printf("\n %s \n\n", test[i]);
