@@ -47,8 +47,7 @@ static char *token(const char *s, int columns, int index)
     int token_pos;  
 
     i = 0;    
-    /* if(s[columns] == '\0')
-        return (NULL); */
+  
 
     token_pos = index - columns;    
     token = (char *)malloc(sizeof(char) * (columns + 1));
@@ -61,42 +60,43 @@ static char *token(const char *s, int columns, int index)
     }
     token[i] = '\0';
 
-    //printf("\n %s \n", token);
-    
+ 
 
     return (token);
 }
+
+
 
  char **ft_split(char const *s, char delimeter)
  {
      int rows;
      int columns;
      size_t i;
-     char **words;     
+     char **words;      
 
-     /* if(!s)
-        return (0);    */
-
+      if(!s)
+        return (0); 
+    
+    
+    
      words = (char **)malloc(sizeof(char *) * (number_of_tokens(s, delimeter) + 1));
      if (words == NULL)
-        return (NULL);
+        return (NULL);   
 
      rows = 0;
      columns = 0;
-     i = 0; 
-     
+     i = 0;      
 
      int len;
-     len = 0;
-     
-
-     while (s[i] != '\0')
+     len = 0;       
+       
+     while (s[i])
      {
          if(s[i] == delimeter)
          len = 0;
          else if(++len == 1)
          {
-             while(s[i] != delimeter )
+             while(s[i] != delimeter && s[i] != '\0')
              {
                 columns++;
                 i++;
@@ -104,32 +104,13 @@ static char *token(const char *s, int columns, int index)
              words[rows] = token(s, columns, i);
              rows++;
              columns = 0;
-             //printf("%d", i);
              i--;
          }
         
          i++;
      }
-     words[rows] = NULL;
-
-
-     
-     /* while (i < strlen(s)) //while (i < number_of_tokens(s, delimeter ))  
-     {    
-         if (s[i] == delimeter && rows < number_of_tokens(s, delimeter))
-         {           
-             //printf("entrou");
-             words[rows] = token(s, columns, i);
-             columns = 0;
-             rows++; 
-         }
-         else
-         {         
-             columns++;            
-         } 
-         i++;
-     }
-     words[rows] = NULL; */
+      words[rows] = NULL;     
+      
 
      return (words);
  }
@@ -138,7 +119,7 @@ static char *token(const char *s, int columns, int index)
 {
     //"      split       this for   me  !       "; os dois inputs que nao dao
     //"                  olol"
-    char *str = "      split       this for   me  !       ";
+    char *str = "                   olol";
     char delimeter = ' ';
     
 
@@ -147,11 +128,14 @@ static char *token(const char *s, int columns, int index)
 
     int i = 0;
     char **test = ft_split(str, delimeter);
-     while (test[i])
+      while (test[i])
     {
         printf("\n$%s$\n\n", test[i]);
         i++;
-    } 
+    }  
+
+    printf("\n$%s$\n\n", test[0]);
+    printf("\n$%s$\n\n", test[1]);
     return (0);
 }
   */

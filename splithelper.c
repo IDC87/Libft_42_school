@@ -6,98 +6,161 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 12:29:39 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/12/07 14:56:05 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/12/07 22:40:17 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	str_words(char const *str, char sep)
-{
-	int	i;
-	int	result;
+ static int number_of_tokens(char const *s, char delimeter)
+ {
+    int i;  
+    int j;
+    int len;
+    int token_count;   
 
-	i = 0;
-	result = 0;
-	while (str[i])
-	{
-		while (str[i] == sep && str[i])
-			i++;
-		if (str[i] == '\0')
-			break ;
-		while (str[i] != sep && str[i])
-			i++;
-		result++;
-	}
-	return (result);
+    i = 0;
+    j = 0;
+    len = 0;
+     if (!(*s))
+        return (0);   
+     
+    //printf("\n1\n");
+    token_count = 0;
+    while (s[i]) //while (s[i] != '\0')
+    {
+        /* if(s[i] == '\0')
+            break;       */
+        if (s[i] == delimeter)        
+            len = 0;        
+        else if(++len == 1)             
+            token_count++;
+        i++;        
+    }    
+    return(token_count);
+ }
+
+static char *token(const char *s, int columns, int index)
+{
+    char *token;
+    int i;
+    int token_pos;  
+
+    i = 0;    
+  
+
+    token_pos = index - columns;    
+    token = (char *)malloc(sizeof(char) * (columns + 1));
+
+    while(i < columns)
+    {
+        token[i] = s[token_pos];
+        i++;
+        token_pos++;
+    }
+    token[i] = '\0';
+
+ 
+
+    return (token);
 }
 
-static	char	*get_next_word(const char *str, int *i, char sep)
+
+
+ char **ft_split(char const *s, char delimeter)
+ {
+     int rows;
+     int columns;
+     size_t i;
+     char **words;     
+
+     int word_count = number_of_tokens(s, delimeter);
+
+      if(!s)
+        return (0);    
+
+     words = (char **)malloc(sizeof(char *) * (word_count + 1));
+     if (words == NULL)
+        return (NULL);
+
+     rows = 0;
+     columns = 0;
+     i = 0; 
+     
+
+     int len;
+     len = 0;
+
+     if (word_count == 1)
+     {         
+         while(s[i] != '\0')
+         {
+             if (s[i] != delimeter)
+             i++;
+         }
+        words[0] = (char *)malloc(sizeof(char) * (i + 1));
+        i = 0;
+        while(s[i] != '\0')
+         {
+             if (s[i] != delimeter)
+             *words[0] = s[i];
+             i++;
+         }
+         words[1] = NULL;
+     }
+     
+    if (word_count != 1)
+    i = 0;
+    {
+     while (s[i])
+     {
+         if(s[i] == delimeter)
+         len = 0;
+         else if(++len == 1)
+         {
+             while(s[i] != delimeter)
+             {
+                columns++;
+                i++;
+             }
+             words[rows] = token(s, columns, i);
+             rows++;
+             columns = 0;
+             //printf("%d", i);
+             i--;
+         }
+        
+         i++;
+     }
+      words[rows] = NULL;  
+    }
+     
+      
+
+     return (words);
+ }
+
+  /* int main (int argc, char **argv)
 {
-	int		j;
-	char	*new;
+    //"      split       this for   me  !       "; os dois inputs que nao dao
+    //"                  olol"
+    char *str = "                   olol";
+    char delimeter = ' ';
+    
 
-	while (str[*i] == sep)
-		if (str[(*i)++] == '\0')
-			return (NULL);
-	j = 0;
-	while (str[*i + j] != sep && str[*i + j])
-		j++;
-	if (j != 0)
-	{
-		new = (char *)malloc(sizeof(char) * (j + 1));
-		if (new == NULL)
-			return (NULL);
-		j = 0;
-		while (str[*i] != sep && str[*i])
-			new[j++] = str[(*i)++];
-		new[j] = '\0';
-	}
-	else
-		return (NULL);
-	return (new);
-}
+    //printf("\n%d\n", number_of_tokens(str, delimeter));
 
-char	**ft_split(char const *str, char sep)
-{
-	char	**list;
-	char	*word;
-	int		*i;
-	int		j;
-	int		k;
-
-	list = (char **)malloc(sizeof(char *) * (str_words(str, sep) + 1));
-	if (list == NULL)
-		return (NULL);
-	j = 0;
-	i = &j;
-	k = 0;
-	while (k < str_words(str, sep))
-	{
-		word = get_next_word(str, i, sep);
-		if (word == NULL)
-			break ;
-		list[k++] = word;
-	}
-	list[k] = NULL;
-	return (list);
-}
-
-int main (int argc, char **argv)
-{
-    char *str = "merda";
-    //ft_split(str, ' ');
 
     int i = 0;
-
-    printf("%d", str_words(str, '\0'));
-
-
-    char **test = ft_split(str, '\0');
-    while (test[i])
+    char **test = ft_split(str, delimeter);
+      while (test[i])
     {
-        printf("\n %s \n\n", test[i]);
+        printf("\n$%s$\n\n", test[i]);
         i++;
-    }
+    }  
+
+    printf("\n$%s$\n\n", test[0]);
+    printf("\n$%s$\n\n", test[1]);
     return (0);
 }
+  */
