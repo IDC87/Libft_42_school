@@ -6,16 +6,16 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 12:15:47 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/11/09 15:24:27 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/12/08 15:37:40 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-    if(c >= 0 && c <= 127)
-    return (1);
-    else
-     return (0);
+	if (c >= 0 && c <= 127)
+		return (1);
+	else
+		return (0);
 }

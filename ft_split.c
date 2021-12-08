@@ -115,7 +115,7 @@ static char *token(const char *s, int columns, int index)
      return (words);
  }
 
-  int main (int argc, char **argv)
+ /*  int main (int argc, char **argv)
 {
     //"      split       this for   me  !       "; os dois inputs que nao dao
     //"                  olol"
@@ -137,5 +137,5 @@ static char *token(const char *s, int columns, int index)
     printf("\n$%s$\n\n", test[0]);
     printf("\n$%s$\n\n", test[1]);
     return (0);
-}
+} */
  

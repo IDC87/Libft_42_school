@@ -6,16 +6,15 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 19:58:45 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/12/04 20:05:48 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/12/08 16:48:46 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	
-    char	cv;
+	char	cv;
 
 	if (n == -2147483648)
 	{
@@ -25,7 +24,7 @@ void ft_putnbr_fd(int n, int fd)
 	}
 	if (n < 0)
 	{
-		write(fd, "-", 1);
+		write (fd, "-", 1);
 		n = n * -1;
 	}
 	if (n >= 10)
@@ -35,4 +34,3 @@ void ft_putnbr_fd(int n, int fd)
 	cv = n % 10 + '0';
 	write (fd, &cv, 1);
 }
-

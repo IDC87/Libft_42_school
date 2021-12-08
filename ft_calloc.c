@@ -6,33 +6,22 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 19:34:38 by marvin            #+#    #+#             */
-/*   Updated: 2021/11/17 19:34:38 by marvin           ###   ########.fr       */
+/*   Updated: 2021/12/08 15:34:27 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* The calloc() function allocates memory for an array of nmemb elements of size bytes each and returns a pointer to the allocated memory.
-The  memory  is  set to zero.  If nmemb or size is 0, then calloc() returns either NULL, or a unique pointer value that can later be 
-successfully passed to free(). If the multiplication of nmemb and size would result in integer overflow, then calloc()  returns  an  error.
-By contrast, an integer overflow would not be detected in the following call to malloc(), 
-with the result that an incorrectly sized block of memory would be allocated:
-
-           malloc(nmemb * size); */
-
-  void *ft_calloc(size_t nmeb, size_t size)
+void	*ft_calloc(size_t nmeb, size_t size)
 {
-        
-    char *str;
-    
-    str = (void *)malloc(nmeb * size);
-    if(str == NULL)
-    return (NULL);    
-    ft_bzero(str, nmeb * size);
-    return (str);
+	char	*str;
 
-}  
-
+	str = (void *)malloc(nmeb * size);
+	if (str == NULL)
+		return (NULL);
+	ft_bzero(str, nmeb * size);
+	return (str);
+}
 /* void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;

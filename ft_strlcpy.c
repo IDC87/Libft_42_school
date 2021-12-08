@@ -6,7 +6,7 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 20:22:53 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/11/26 20:49:49 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/12/08 17:08:05 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;
-	unsigned int src_size;
+	unsigned int	src_size;
 
 	i = 0;
-	src_size = ft_strlen(src);	
-	if(size != 0)
+	src_size = ft_strlen(src);
+	if (size != 0)
 	{
 		while ((i < size - 1) && src[i])
 		{
@@ -28,6 +28,5 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 		}
 		dest[i] = '\0';
 	}
-	
 	return (src_size);
 }

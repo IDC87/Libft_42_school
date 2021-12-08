@@ -6,23 +6,23 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 18:43:40 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/12/04 19:05:20 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/12/08 16:59:47 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_striteri(char *s, void (*f)(unsigned int, char *))
+#include "libft.h"
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-    int i;
+	int	i;
 
-    if (!s || !f)
-		return;
-            
-    i = 0;
-    while (s[i] != '\0')
-        {
-            f(i, &s[i]);
-            i++;
-        }
-    return;
-
+	if (!s || !f)
+		return ;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		f(i, &s[i]);
+		i++;
+	}
+	return ;
 }
