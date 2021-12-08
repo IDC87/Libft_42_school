@@ -115,12 +115,12 @@ static char *token(const char *s, int columns, int index)
      return (words);
  }
 
-  /* int main (int argc, char **argv)
+  int main (int argc, char **argv)
 {
     //"      split       this for   me  !       "; os dois inputs que nao dao
     //"                  olol"
-    char *str = "                   olol";
-    char delimeter = ' ';
+    char *str = "1-2-3-4-5-6-7-8--8-8--8-4------4--4";
+    char delimeter = '-';
     
 
     //printf("\n%d\n", number_of_tokens(str, delimeter));
@@ -138,4 +138,4 @@ static char *token(const char *s, int columns, int index)
     printf("\n$%s$\n\n", test[1]);
     return (0);
 }
-  */
+ 
