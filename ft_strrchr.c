@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 02:02:22 by marvin            #+#    #+#             */
-/*   Updated: 2021/12/08 17:37:15 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/12/10 15:39:29 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	int		i;
 	char	*last;
 
 	i = 0;

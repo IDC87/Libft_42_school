@@ -6,13 +6,13 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 18:12:28 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/12/08 18:27:21 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/12/10 18:27:58 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	number_of_tokens(char const *s, char delimeter)
+static int	nbr_tokens(char const *s, char delimeter)
 {
 	int	i;
 	int	j;
@@ -39,8 +39,8 @@ static int	number_of_tokens(char const *s, char delimeter)
 static char	*token(const char *s, int columns, int index)
 {
 	char	*token;
-	int	i;
-	int	token_pos;
+	int		i;
+	int		token_pos;
 
 	i = 0;
 	token_pos = index - columns;
@@ -55,23 +55,15 @@ static char	*token(const char *s, int columns, int index)
 	return (token);
 }
 
-char	**ft_split(char const *s, char delimeter)
+char	**words_divider(char const *s, char **words, char delimeter, int len)
 {
-	int	rows;
-	int	len;
-	int	columns;
+	int		rows;
+	int		columns;
 	size_t	i;
-	char	**words;
 
-	if (!s)
-		return (0);
-	words = (char **)malloc(sizeof(char *) * (number_of_tokens(s, delimeter) + 1));
-	if (words == NULL)
-		return (NULL);
 	rows = 0;
 	columns = 0;
 	i = 0;
-	len = 0;
 	while (s[i])
 	{
 		if (s[i] == delimeter)
@@ -83,8 +75,7 @@ char	**ft_split(char const *s, char delimeter)
 				columns++;
 				i++;
 			}
-			words[rows] = token(s, columns, i);
-			rows++;
+			words[rows++] = token(s, columns, i);
 			columns = 0;
 			i--;
 		}
@@ -92,6 +83,22 @@ char	**ft_split(char const *s, char delimeter)
 	}
 	words[rows] = NULL;
 	return (words);
+}
+
+char	**ft_split(char const *s, char delimeter)
+{
+	char	**words;
+	char	**str;
+	int		len;
+
+	len = 0;
+	if (!s)
+		return (0);
+	words = (char **)malloc(sizeof(char *) * (nbr_tokens(s, delimeter) + 1));
+	if (words == NULL)
+		return (NULL);
+	str = words_divider(s, words, delimeter, len);
+	return (str);
 }
 /*  int main (int argc, char **argv)
 {
@@ -115,4 +122,4 @@ char	**ft_split(char const *s, char delimeter)
     printf("\n$%s$\n\n", test[0]);
     printf("\n$%s$\n\n", test[1]);
     return (0);
-} */ 
+} */

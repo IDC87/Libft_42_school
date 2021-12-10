@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 21:56:53 by marvin            #+#    #+#             */
-/*   Updated: 2021/12/08 16:57:48 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/12/10 15:17:25 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strdup(const char *s)
 {
-	int	i;
+	int		i;
 	char	*str;
 
 	str = NULL;

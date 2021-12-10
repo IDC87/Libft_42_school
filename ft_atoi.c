@@ -6,7 +6,7 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 10:26:15 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/12/08 15:29:51 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/12/10 15:08:13 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_atoi(char *str)
 
 	sig = 1;
 	j = 0;
-	while ((str[j] == ' ' || (str[j] >= '\t' && str[j] <= '\r')) && str[j] != '\0')
+	while ((str[j] == ' ' || (str[j] >= '\t' && str[j] <= '\r')) && str[j])
 		j++;
 	while ((str[j] == '+' || str[j] == '-') && str[j] != '\0')
 	{

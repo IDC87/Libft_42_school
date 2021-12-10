@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 16:57:23 by marvin            #+#    #+#             */
-/*   Updated: 2021/12/08 15:47:10 by ivda-cru         ###   ########.fr       */
+/*   Created: 2021/12/08 18:14:20 by ivda-cru          #+#    #+#             */
+/*   Updated: 2021/12/10 17:43:32 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,11 @@ int	itoa_size(int n)
 	return (size);
 }
 
-char	*ft_itoa(int n)
+char	*convertion(char *str, int n, int len)
 {
-	int	i;
 	int	z;
-	int	len;
-	char	*str;
 
-	len = itoa_size(n);
-	i = 0;
 	z = 0;
-	str = (char *)malloc(sizeof(char) * (len) + 1);
-	if (str == NULL)
-		return (NULL);
-	if (n == 0)
-		str[0] = '0';
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
 	while (len--)
 	{
 		if (n < 0)
@@ -54,8 +42,24 @@ char	*ft_itoa(int n)
 		n = n / 10;
 		if (z == 1)
 			str[0] = '-';
-		i++;
 	}
+	return (str);
+}
+
+char	*ft_itoa(int n)
+{	
+	int		len;
+	char	*str;
+
+	len = itoa_size(n);
+	str = (char *)malloc(sizeof(char) * (len) + 1);
+	if (str == NULL)
+		return (NULL);
+	if (n == 0)
+		str[0] = '0';
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	convertion(str, n, len);
 	return (str);
 }
 /* int main(int argc, char **argv)
