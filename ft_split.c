@@ -63,8 +63,8 @@ char	**words_divider(char const *s, char **words, char delimeter, int len)
 
 	rows = 0;
 	columns = 0;
-	i = 0;
-	while (s[i])
+	i = -1;
+	while (s[++i])
 	{
 		if (s[i] == delimeter)
 			len = 0;
@@ -79,7 +79,6 @@ char	**words_divider(char const *s, char **words, char delimeter, int len)
 			columns = 0;
 			i--;
 		}
-		i++;
 	}
 	words[rows] = NULL;
 	return (words);

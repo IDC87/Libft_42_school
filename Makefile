@@ -115,6 +115,7 @@
 
 NAME = libft.a
 OBJS = $(SRCS:.c=.o) #Apenas este comando chega como suficiente para criar os objects files
+BOBJS = $(BONUS:.c=.o)
 RM = rm -f
 
 #COMPILING VARIABLES
@@ -183,6 +184,16 @@ SRCS = ft_bzero.c\
 	ft_putstr_fd.c\
 	ft_putendl_fd.c\
 	ft_putnbr_fd.c\
+
+BONUS = ft_lstnew_bonus.c\
+		ft_lstadd_front_bonus.c\
+		ft_lstsize_bonus.c\
+		ft_lstlast_bonus.c\
+		ft_lstadd_back_bonus.c\
+		ft_lstdelone_bonus.c\
+		ft_lstclear_bonus.c\
+		ft_lstiter_bonus.c\
+		ft_lstmap_bonus.c
 	
 
 
@@ -207,6 +218,7 @@ $(NAME): $(OBJS)
 # clean deletes all Emacs and Vim temporary files along with the executable
 clean:
 	$(RM) $(OBJS)
+	$(RM) $(BOBJS)
 #rm -rf ./$(OBJDIR)/*.o
 
 # fclean deletes the Emacs temporary files, the executable, and the object files
@@ -215,6 +227,10 @@ fclean: clean
 
 # re forces recompilation of all source files
 re: fclean all
+
+bonus: $(BOBJS)
+	ar rcs $(NAME) $(OBJS) $(BOBJS)
+	ranlib $(NAME)
 
 .PHONY: all clean fclean re
 

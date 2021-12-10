@@ -6,7 +6,7 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 18:48:01 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/11/20 15:50:37 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/12/10 19:34:04 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,23 @@
 	return (j);
 } */
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	j;
+	size_t	i;
+	size_t	j;
 
 	j = 0;
-	if (size <= ft_strlen(dest))
+	if (size <= ft_strlen(dst))
 		return (size + ft_strlen(src));
-	i = ft_strlen(dest);
+	i = ft_strlen(dst);
 	while (src[j] != '\0' && i + 1 < size)
 	{
-		dest[i] = src[j];
+		dst[i] = src[j];
 		i++;
 		j++;
 	}
-	dest[i] = '\0';
-	return (ft_strlen(dest) + ft_strlen(&src[j]));
+	dst[i] = '\0';
+	return (ft_strlen(dst) + ft_strlen(&src[j]));
 }
 /* #include <stdio.h>
 int main()
