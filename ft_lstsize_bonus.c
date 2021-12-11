@@ -6,9 +6,11 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 18:57:18 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/12/10 15:43:40 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/12/11 00:19:15 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_lstsize(t_list *lst)
 {

@@ -99,7 +99,7 @@ char	**ft_split(char const *s, char delimeter)
 	str = words_divider(s, words, delimeter, len);
 	return (str);
 }
-/*  int main (int argc, char **argv)
+ /* int main (int argc, char **argv)
 {
     //"      split       this for   me  !       "; os dois inputs que nao dao
     //"                  olol"
@@ -107,7 +107,7 @@ char	**ft_split(char const *s, char delimeter)
     char delimeter = '-';
     
 
-    //printf("\n%d\n", number_of_tokens(str, delimeter));
+    printf("\n%d\n", nbr_tokens(str, delimeter));
 
 
     int i = 0;
