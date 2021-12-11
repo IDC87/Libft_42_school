@@ -6,7 +6,7 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 19:18:09 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/12/11 00:26:31 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/12/11 20:09:49 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,15 @@
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
-	t_list	*temp;
 
-	if (lst == NULL)
-		return ;
-	while (new != NULL)
+	if (*lst == NULL)
+		*lst = new;
+	else
+	{
+	last = *lst;
+	while (last->next != NULL)
 		last = last->next;
-	temp = last;
-	temp->next = new;
+	last->next = new;
+	new->next = NULL;
+	}
 }

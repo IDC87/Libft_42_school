@@ -17,8 +17,8 @@ int	itoa_size(int n)
 	int	size;
 
 	size = 0;
-	
-	while (n != 0)
+	n = -n;
+	while (n)
 	{
 		n = n / 10;
 		size++;
@@ -54,7 +54,7 @@ char	*ft_itoa(int n)
 	char	*str;
 
 	if (n == -2147483648)
-		return (strdup("-2147483648"));
+		return (ft_strdup("-2147483648"));
 	len = itoa_size(n);	
 	j = 0;
 	if (n < 0)
@@ -63,10 +63,12 @@ char	*ft_itoa(int n)
 	if (str == NULL)
 		return (NULL);
 	if (n == 0)
-		str[0] = '0';
-	
+		*str = n / 10 + '0';
+		
 	
 	convertion(str, n, len);
+	str[len + 1] = '\0';
+	
 	return (str);
 }
  /* int main(int argc, char **argv)

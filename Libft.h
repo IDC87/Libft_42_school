@@ -16,9 +16,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>     //APAGAR DEPOIS O QUE NAO INTERESSA
-# include <ctype.h>
-# include <string.h>
 
 typedef struct s_list
 {
@@ -106,6 +103,8 @@ void			ft_lstadd_back(t_list **lst, t_list *new);
 
 void			ft_lstdelone(t_list *lst, void (*del)(void *));
 
-/*ft_lstclear(t_list **lst, void (*del)(void *));*/
+void			ft_lstclear(t_list **lst, void (*del)(void *));
+
+void    		ft_lstiter(t_list *lst, void (*f)(void *));
 
 #endif
