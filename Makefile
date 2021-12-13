@@ -118,6 +118,10 @@ OBJS = $(SRCS:.c=.o) #Apenas este comando chega como suficiente para criar os ob
 BOBJS = $(BONUS:.c=.o)
 RM = rm -f
 
+#TESTS	= tests/test1.c
+#TNAME	= test
+#TOBJS	= ${TESTS:.c=.o}
+
 #COMPILING VARIABLES
 CC = gcc
 CCmove = $(CC) -c $(SRCS) && mv
@@ -149,6 +153,10 @@ DummyREPO = git remote add origin https://github.com/IDC87/Repo_test.git
 GitPush = git push -u origin main
 SetStream = git push --set-upstream origin master
 CleanUrl = git remote rm origin
+
+TESTS	= tests/test1.c
+TNAME	= test
+TOBJS	= ${TESTS:.c=.o}
 
 SRCS = ft_bzero.c\
 	ft_isalnum.c\
@@ -199,6 +207,8 @@ BONUS = ft_lstnew_bonus.c\
 
 all: $(NAME)
 
+
+
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 	ranlib $(NAME)
@@ -224,6 +234,9 @@ bonus: $(BOBJS)
 	ar rcs $(NAME) $(OBJS) $(BOBJS)
 	ranlib $(NAME)
 
+#test: re ${TOBJS}
+#	${CC} -g ${CFLAGS} ${TOBJS} -L. -lft -o ${TNAME}
+
 .PHONY: all clean fclean re
 
 #>>>>>FIM DOS FICHEIROS OBRIGATORIOS<<<<<<
@@ -241,6 +254,7 @@ Libft: $(SRC)
 #transform .c files in object files
 #%.o : %.c $(HEADER)
 #	$(CC) -c -o $@ $< $(CFLAGS)	
+
 
 trim:
 	$(Trim)

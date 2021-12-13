@@ -6,7 +6,7 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 20:02:14 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/12/11 00:12:44 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/12/13 17:43:13 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*temp;
 
-	if(del == NULL)
+	if (del == NULL)
 		return ;
 	while (*lst)
 	{
@@ -26,9 +26,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	}
 	*lst = NULL;
 }
-
-
-
 /* include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
@@ -45,7 +42,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	}
 	*lst = NULL;
 }
-
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list *aux;
@@ -60,15 +56,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	}
 	*lst = 0;
 }
-
-
-
-
-
-
-
-#include "libft.h"
-
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*temp;
@@ -80,7 +67,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		temp = temp->next;
 	}
 }
-
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst || !f)
@@ -91,11 +77,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		lst = lst->next;
 	}
 }
-
-
-
-#include "libft.h"
-
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
@@ -119,12 +100,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	temp->next = NULL;
 	return (new_list);
 }
-
-
-
-
-#include "libft.h"
-
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list *new_lst;

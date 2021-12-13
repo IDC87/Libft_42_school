@@ -99,7 +99,7 @@ char	**ft_split(char const *s, char delimeter)
 	str = words_divider(s, words, delimeter, len);
 	return (str);
 }
- /* int main (int argc, char **argv)
+/* int main (int argc, char **argv)
 {
     //"      split       this for   me  !       "; os dois inputs que nao dao
     //"                  olol"

@@ -50,12 +50,12 @@ char	*convertion(char *str, int n, int len)
 char	*ft_itoa(int n)
 {	
 	int		len;
-	int j;
+	int		j;
 	char	*str;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	len = itoa_size(n);	
+	len = itoa_size(n);
 	j = 0;
 	if (n < 0)
 		j = 1;
@@ -64,14 +64,11 @@ char	*ft_itoa(int n)
 		return (NULL);
 	if (n == 0)
 		*str = n / 10 + '0';
-		
-	
 	convertion(str, n, len);
 	str[len + 1] = '\0';
-	
 	return (str);
 }
- /* int main(int argc, char **argv)
+/* int main(int argc, char **argv)
 {
     printf("\n%s\n\n", ft_itoa(-5859));
 
@@ -128,5 +125,3 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 } */
-
-

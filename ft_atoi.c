@@ -6,7 +6,7 @@
 /*   By: ivda-cru <ivda-cru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 10:26:15 by ivda-cru          #+#    #+#             */
-/*   Updated: 2021/12/10 20:01:51 by ivda-cru         ###   ########.fr       */
+/*   Updated: 2021/12/13 17:35:21 by ivda-cru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_atoi(const char *str)
 	res = 0;
 	while ((str[j] >= '0' && str[j] <= '9') && str[j] != '\0')
 	{
-		res = res * 10; 
+		res = res * 10;
 		res = res + (str[j] - '0');
 		j++;
 	}
