@@ -80,7 +80,23 @@
  #git remote add origin https://github.com/IDC87/Repo_test.git
  #git push -u origin main
 
+
+
+ # UPDATING CREDENTIALS ON GIT
+
+# !!!!Nao esquecer de ir aos credentials manager em control options no PC primeiro!!!!!
+
  # git config --global credential.helper cache //////IMPORTANTE! keeps cache token in the computer when using https method
+ # git config --unset credential.helper 'cache'
+ # git config --global --unset credential.helper 'cache'
+ # git config --system --unset credential.helper 'cache'
+
+# git config --set credential.helper 'cache --timeout=600'
+# git config --global --set credential.helper 'cache --timeout=600'
+# git config --system --set credential.helper 'cache --timeout=600'
+
+# FIM das Credentials
+
 
  #…or push an existing repository from the command line
  #git remote add origin https://github.com/IDC87/Repo_test.git
